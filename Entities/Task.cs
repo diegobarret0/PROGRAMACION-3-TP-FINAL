@@ -27,6 +27,7 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
             actual_cost = actualCost;
             end_date = endDate;
         }
+        public Task() { }
 
         public int id
         {

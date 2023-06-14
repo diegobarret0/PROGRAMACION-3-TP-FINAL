@@ -12,10 +12,10 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
         private string companyName;
         private string phoneNumber;
         private string email_;
-        private string cuit_;
+        private int cuit_;
         private string contactPerson;
 
-        public Proprietor(string companyName, string phoneNumber, string email_, string cuit_, string contactPerson)
+        public Proprietor(string companyName, string phoneNumber, string email_, int cuit_, string contactPerson)
         {
             company_name = companyName;
             phone_number = phoneNumber;
@@ -23,6 +23,7 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
             cuit = cuit_;
             contact_person = contactPerson;
         }
+        public Proprietor() { }
 
         public int id
         {
@@ -44,7 +45,7 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
             get { return email_; }
             set { email_ = value; }
         }
-        public string cuit
+        public int cuit
         {
             get { return cuit_; }
             set { cuit_ = value; }

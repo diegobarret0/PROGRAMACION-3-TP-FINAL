@@ -23,6 +23,7 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
             proprietor_id = proprietorId;
             leader_file = leaderFile;
         }
+        public Project() { }
 
         public int id
         {

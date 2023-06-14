@@ -20,6 +20,7 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
             task_id = taskId;
             function_id = functionId;
         }
+        public Work() { }
 
         public int employee_file
         {

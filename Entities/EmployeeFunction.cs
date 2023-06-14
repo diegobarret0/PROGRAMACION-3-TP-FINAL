@@ -16,6 +16,7 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
             id = id_;
             description_ = description;
         }
+        public EmployeeFunction() { }
         public int id 
         {
             get { return id_; }

@@ -10,13 +10,14 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
     {
         private DateTime observationDate;
         private string observationDescription;
-        private string employeeFile;
-        public Observation(DateTime observationDate, string observationDescription, string employeeFile) 
+        private int employeeFile;
+        public Observation(DateTime observationDate, string observationDescription, int employeeFile) 
         {
             ob_date = observationDate;
             observation = observationDescription;
             employee_file = employeeFile;
         }
+        public Observation() { }
 
         public DateTime ob_date { 
             get {  return observationDate; } 
@@ -27,7 +28,7 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
             get { return observationDescription; }
             set { observationDescription = value; }
         }
-        public string employee_file
+        public int employee_file
         {
             get { return employeeFile; }
             set { employeeFile = value; }

@@ -8,13 +8,13 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
 {
     public class Employee
     {   
-        private string fileNumber;
+        private int fileNumber;
         private DateTime entryDate;
         private string firstName;
         private string lastName;
         private string phoneNumber;
         private string email_;
-        public Employee(string fileNumber, DateTime entryDate, string firstName, string lastName, string phoneNumber, string email_) {
+        public Employee(int fileNumber, DateTime entryDate, string firstName, string lastName, string phoneNumber, string email_) {
             file_number = fileNumber;
             entry_date = entryDate;
             first_name = firstName;
@@ -22,8 +22,9 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
             phone_number = phoneNumber;
             email = email_;
         }
+        public Employee() { }
 
-        public string file_number
+        public int file_number
         {
             get { return fileNumber; }
             set { fileNumber = value; }
@@ -52,6 +53,11 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
         {
             get { return email_; }
             set { email_ = value; }
+        }
+        public override string ToString()
+        {
+            return $"File Number: {fileNumber}\nEntry Date: {entryDate}\nFirst Name: {firstName}\nLast Name: {lastName}\n" +
+                    $"Phone Number: {phoneNumber}\nEmail: {email_}";
         }
     }
 }
