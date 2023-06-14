@@ -8,7 +8,7 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
 {
     public class Task
     {
-        private int id;
+        private int id_;
         private int projectId;
         private string description;
         private int estimatedHours;
@@ -19,51 +19,52 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
 
         public Task(int projectId, string description, int estimatedHours, float estimatedCost, int actualHours, float actualCost, DateTime endDate)
         {
-            ProjectId = projectId;
-            Description = description;
-            EstimatedHours = estimatedHours;
-            EstimatedCost = estimatedCost;
-            ActualHours = actualHours;
-            ActualCost = actualCost;
-            EndDate = endDate;
+            proyect_id = projectId;
+            description_ = description;
+            estimated_hours = estimatedHours;
+            estimated_cost = estimatedCost;
+            actual_hours = actualHours;
+            actual_cost = actualCost;
+            end_date = endDate;
         }
+        public Task() { }
 
-        public int Id
+        public int id
         {
-            get { return id; }
-            set { id = value; }
+            get { return id_; }
+            set { id_ = value; }
         }
-        public int ProjectId
+        public int proyect_id
         {
             get { return projectId; }
             set { projectId = value; }
         }
-        public string Description
+        public string description_
         {
             get { return description; }
             set { description = value; }
         }
-        public int EstimatedHours
+        public int estimated_hours
         {
             get { return estimatedHours; }
             set { estimatedHours = value; }
         }
-        public float EstimatedCost
+        public float estimated_cost
         {
             get { return estimatedCost; }
             set { estimatedCost = value; }
         }
-        public int ActualHours
+        public int actual_hours
         {
             get { return actualHours; }
             set { actualHours = value; }
         }
-        public float ActualCost
+        public float actual_cost
         {
             get { return actualCost; }
             set { actualCost = value; }
         }
-        public DateTime EndDate
+        public DateTime end_date
         {
             get { return endDate; }
             set { endDate = value; }

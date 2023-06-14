@@ -8,7 +8,7 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
 {
     public class Project
     {
-        private int id;
+        private int id_;
         private string name;
         private float estimatedAmount;
         private int estimatedTime;
@@ -17,39 +17,40 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
 
         public Project(string name, float estimatedAmount, int estimatedTime, int proprietorId, int leaderFile)
         {
-            Name = name;
-            EstimatedAmount = estimatedAmount;
-            EstimatedTime = estimatedTime;
-            ProprietorId = proprietorId;
-            LeaderFile = leaderFile;
+            name_ = name;
+            estimated_amount = estimatedAmount;
+            estimated_time = estimatedTime;
+            proprietor_id = proprietorId;
+            leader_file = leaderFile;
         }
+        public Project() { }
 
-        public int Id
+        public int id
         {
-            get { return id; }
-            set { id = value; }
+            get { return id_; }
+            set { id_ = value; }
         }
-        public string Name
+        public string name_
         {
             get { return name; }
             set { name = value; }
         }
-        public float EstimatedAmount
+        public float estimated_amount
         {
             get { return estimatedAmount; }
             set { estimatedAmount = value; }
         }
-        public int EstimatedTime
+        public int estimated_time
         {
             get { return estimatedTime; }
             set { estimatedTime = value; }
         }
-        public int ProprietorId
+        public int proprietor_id
         {
             get { return proprietorId; }
             set { proprietorId = value;}
         }
-        public int LeaderFile
+        public int leader_file
         {
             get { return leaderFile; }
             set { leaderFile = value; }

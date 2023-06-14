@@ -8,20 +8,21 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
 {
     public class EmployeeFunction
     {
-        private int id;
+        private int id_;
         private string description;
 
-        public EmployeeFunction(int id, string description) 
+        public EmployeeFunction(int id_, string description) 
         {
-            Id = id;
-            Description = description;
+            id = id_;
+            description_ = description;
         }
-        public int Id 
+        public EmployeeFunction() { }
+        public int id 
         {
-            get { return id; }
-            set { id = value; }
+            get { return id_; }
+            set { id_ = value; }
         }
-        public string Description
+        public string description_
         {
             get { return description; }
             set { description = value; }
