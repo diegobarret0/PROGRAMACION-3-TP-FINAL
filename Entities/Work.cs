@@ -15,28 +15,28 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
 
         public Work(int employeeFile, int projectId, int taskId, int functionId)
         {
-            EmployeeFile = employeeFile;
-            ProjectId = projectId;
-            TaskId = taskId;
-            FunctionId = functionId;
+            employee_file = employeeFile;
+            proyect_id = projectId;
+            task_id = taskId;
+            function_id = functionId;
         }
 
-        public int EmployeeFile
+        public int employee_file
         {
             get { return employeeFile; }
             set { employeeFile = value; }
         }
-        public int ProjectId
+        public int proyect_id
         {
             get { return projectId; }
             set { projectId = value; }
         }
-        public int TaskId
+        public int task_id
         {
             get { return taskId; }
             set { taskId = value; }
         }
-        public int FunctionId
+        public int function_id
         {
             get { return functionId; }
             set { functionId = value; }

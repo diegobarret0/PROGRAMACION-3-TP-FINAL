@@ -13,21 +13,21 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
         private string employeeFile;
         public Observation(DateTime observationDate, string observationDescription, string employeeFile) 
         {
-            ObservationDate = observationDate;
-            ObservationDescription = observationDescription;
-            EmployeeFile = employeeFile;
+            ob_date = observationDate;
+            observation = observationDescription;
+            employee_file = employeeFile;
         }
 
-        public DateTime ObservationDate { 
+        public DateTime ob_date { 
             get {  return observationDate; } 
             set { observationDate = value; }
         }
-        public string ObservationDescription
+        public string observation
         {
             get { return observationDescription; }
             set { observationDescription = value; }
         }
-        public string EmployeeFile
+        public string employee_file
         {
             get { return employeeFile; }
             set { employeeFile = value; }

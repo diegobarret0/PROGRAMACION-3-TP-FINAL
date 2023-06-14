@@ -8,48 +8,48 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
 {
     public class Proprietor
     {
-        private int id;
+        private int id_;
         private string companyName;
         private string phoneNumber;
-        private string email;
-        private string cuit;
+        private string email_;
+        private string cuit_;
         private string contactPerson;
 
-        public Proprietor(string companyName, string phoneNumber, string email, string cuit, string contactPerson)
+        public Proprietor(string companyName, string phoneNumber, string email_, string cuit_, string contactPerson)
         {
-            CompanyName = companyName;
-            PhoneNumber = phoneNumber;
-            Email = email;
-            Cuit = cuit;
-            ContactPerson = contactPerson;
+            company_name = companyName;
+            phone_number = phoneNumber;
+            email = email_;
+            cuit = cuit_;
+            contact_person = contactPerson;
         }
 
-        public int Id
+        public int id
         {
-            get { return id; }
-            set { id = value; }
+            get { return id_; }
+            set { id_ = value; }
         }
-        public string CompanyName
+        public string company_name
         {
             get { return companyName; }
             set { companyName = value; }
         }
-        public string PhoneNumber
+        public string phone_number
         {
             get { return phoneNumber; }
             set { phoneNumber = value; }
         }
-        public string Email
+        public string email
         {
-            get { return email; }
-            set { email = value; }
+            get { return email_; }
+            set { email_ = value; }
         }
-        public string Cuit
+        public string cuit
         {
-            get { return cuit; }
-            set { cuit = value; }
+            get { return cuit_; }
+            set { cuit_ = value; }
         }
-        public string ContactPerson
+        public string contact_person
         {
             get { return contactPerson; }
             set { contactPerson = value; }
