@@ -28,66 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
+            txtNameOwner = new TextBox();
+            txtBusinessName = new TextBox();
+            txtCuit = new TextBox();
+            txtPhone = new TextBox();
+            txtContact = new TextBox();
+            txtEmail = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            btnModify = new Button();
+            btnSave = new Button();
+            btnDelete = new Button();
+            tblOwner = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)tblOwner).BeginInit();
             SuspendLayout();
             // 
-            // textBox1
+            // txtNameOwner
             // 
-            textBox1.Location = new Point(12, 44);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(87, 23);
-            textBox1.TabIndex = 0;
+            txtNameOwner.Location = new Point(12, 44);
+            txtNameOwner.Name = "txtNameOwner";
+            txtNameOwner.Size = new Size(87, 23);
+            txtNameOwner.TabIndex = 0;
             // 
-            // textBox2
+            // txtBusinessName
             // 
-            textBox2.Location = new Point(136, 44);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(176, 23);
-            textBox2.TabIndex = 1;
+            txtBusinessName.Location = new Point(136, 44);
+            txtBusinessName.Name = "txtBusinessName";
+            txtBusinessName.Size = new Size(176, 23);
+            txtBusinessName.TabIndex = 1;
             // 
-            // textBox3
+            // txtCuit
             // 
-            textBox3.Location = new Point(362, 44);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(300, 23);
-            textBox3.TabIndex = 2;
+            txtCuit.Location = new Point(362, 44);
+            txtCuit.Name = "txtCuit";
+            txtCuit.Size = new Size(300, 23);
+            txtCuit.TabIndex = 2;
             // 
-            // textBox4
+            // txtPhone
             // 
-            textBox4.Location = new Point(12, 115);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(300, 23);
-            textBox4.TabIndex = 3;
+            txtPhone.Location = new Point(12, 115);
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(300, 23);
+            txtPhone.TabIndex = 3;
             // 
-            // textBox5
+            // txtContact
             // 
-            textBox5.Location = new Point(12, 197);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(300, 23);
-            textBox5.TabIndex = 4;
+            txtContact.Location = new Point(12, 197);
+            txtContact.Name = "txtContact";
+            txtContact.Size = new Size(300, 23);
+            txtContact.TabIndex = 4;
             // 
-            // textBox6
+            // txtEmail
             // 
-            textBox6.Location = new Point(362, 115);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(300, 23);
-            textBox6.TabIndex = 5;
+            txtEmail.Location = new Point(362, 115);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(300, 23);
+            txtEmail.TabIndex = 5;
             // 
             // label1
             // 
@@ -143,88 +143,88 @@
             label6.TabIndex = 11;
             label6.Text = "Persona de Contacto";
             // 
-            // button1
+            // btnModify
             // 
-            button1.Location = new Point(362, 197);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 12;
-            button1.Text = "Modificar";
-            button1.UseVisualStyleBackColor = true;
+            btnModify.Location = new Point(362, 197);
+            btnModify.Name = "btnModify";
+            btnModify.Size = new Size(75, 23);
+            btnModify.TabIndex = 12;
+            btnModify.Text = "Modificar";
+            btnModify.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnSave
             // 
-            button2.Location = new Point(478, 197);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 13;
-            button2.Text = "Guardar";
-            button2.UseVisualStyleBackColor = true;
+            btnSave.Location = new Point(478, 197);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(75, 23);
+            btnSave.TabIndex = 13;
+            btnSave.Text = "Guardar";
+            btnSave.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnDelete
             // 
-            button3.Location = new Point(587, 196);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 14;
-            button3.Text = "Eliminar";
-            button3.UseVisualStyleBackColor = true;
+            btnDelete.Location = new Point(587, 196);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(75, 23);
+            btnDelete.TabIndex = 14;
+            btnDelete.Text = "Eliminar";
+            btnDelete.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // tblOwner
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 243);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(650, 150);
-            dataGridView1.TabIndex = 15;
+            tblOwner.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            tblOwner.Location = new Point(12, 243);
+            tblOwner.Name = "tblOwner";
+            tblOwner.RowTemplate.Height = 25;
+            tblOwner.Size = new Size(650, 150);
+            tblOwner.TabIndex = 15;
             // 
             // frmOwner
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(675, 404);
-            Controls.Add(dataGridView1);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(tblOwner);
+            Controls.Add(btnDelete);
+            Controls.Add(btnSave);
+            Controls.Add(btnModify);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtEmail);
+            Controls.Add(txtContact);
+            Controls.Add(txtPhone);
+            Controls.Add(txtCuit);
+            Controls.Add(txtBusinessName);
+            Controls.Add(txtNameOwner);
             Name = "frmOwner";
             Text = "frmOwner";
             Load += frmOwner_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tblOwner).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
+        private TextBox txtNameOwner;
+        private TextBox txtBusinessName;
+        private TextBox txtCuit;
+        private TextBox txtPhone;
+        private TextBox txtContact;
+        private TextBox txtEmail;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
         private Label label6;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private DataGridView dataGridView1;
+        private Button btnModify;
+        private Button btnSave;
+        private Button btnDelete;
+        private DataGridView tblOwner;
     }
 }

@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            txtDocket = new TextBox();
+            txtNameProyect = new TextBox();
+            txtId = new TextBox();
             textBox6 = new TextBox();
-            dataGridView1 = new DataGridView();
+            tblProyect = new DataGridView();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
-            Propietario = new Button();
-            comboBox1 = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            btnNewProyect = new Button();
+            btnModify = new Button();
+            btnDelete = new Button();
+            btnSave = new Button();
+            btnSearch = new Button();
+            btnTask = new Button();
+            btnAddOwner = new Button();
+            cmbOwner = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)tblProyect).BeginInit();
             SuspendLayout();
             // 
             // textBox1
@@ -58,27 +58,27 @@
             textBox1.Size = new Size(154, 23);
             textBox1.TabIndex = 0;
             // 
-            // textBox2
+            // txtDocket
             // 
-            textBox2.Location = new Point(377, 91);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(269, 23);
-            textBox2.TabIndex = 1;
+            txtDocket.Location = new Point(377, 91);
+            txtDocket.Name = "txtDocket";
+            txtDocket.Size = new Size(269, 23);
+            txtDocket.TabIndex = 1;
             // 
-            // textBox3
+            // txtNameProyect
             // 
-            textBox3.Location = new Point(191, 25);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(455, 23);
-            textBox3.TabIndex = 2;
+            txtNameProyect.Location = new Point(191, 25);
+            txtNameProyect.Name = "txtNameProyect";
+            txtNameProyect.Size = new Size(455, 23);
+            txtNameProyect.TabIndex = 2;
             // 
-            // textBox4
+            // txtId
             // 
-            textBox4.Location = new Point(12, 25);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(88, 23);
-            textBox4.TabIndex = 3;
-            textBox4.TextChanged += textBox4_TextChanged;
+            txtId.Location = new Point(12, 25);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(88, 23);
+            txtId.TabIndex = 3;
+            txtId.TextChanged += textBox4_TextChanged;
             // 
             // textBox6
             // 
@@ -87,14 +87,14 @@
             textBox6.Size = new Size(154, 23);
             textBox6.TabIndex = 5;
             // 
-            // dataGridView1
+            // tblProyect
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 260);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(634, 178);
-            dataGridView1.TabIndex = 6;
+            tblProyect.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            tblProyect.Location = new Point(12, 260);
+            tblProyect.Name = "tblProyect";
+            tblProyect.RowTemplate.Height = 25;
+            tblProyect.Size = new Size(634, 178);
+            tblProyect.TabIndex = 6;
             // 
             // label1
             // 
@@ -152,107 +152,117 @@
             label6.Text = "Legajo";
             label6.Click += label6_Click;
             // 
-            // button1
+            // btnNewProyect
             // 
-            button1.Location = new Point(191, 210);
-            button1.Name = "button1";
-            button1.Size = new Size(105, 23);
-            button1.TabIndex = 13;
-            button1.Text = "Nuevo Proyecto\r\n";
-            button1.UseVisualStyleBackColor = true;
+            btnNewProyect.Location = new Point(143, 210);
+            btnNewProyect.Name = "btnNewProyect";
+            btnNewProyect.Size = new Size(105, 23);
+            btnNewProyect.TabIndex = 13;
+            btnNewProyect.Text = "Nuevo Proyecto\r\n";
+            btnNewProyect.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnModify
             // 
-            button2.Location = new Point(377, 210);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 14;
-            button2.Text = "Modificar";
-            button2.UseVisualStyleBackColor = true;
+            btnModify.Image = Properties.Resources._2530835_compose_create_edit_edit_file_office_icon;
+            btnModify.Location = new Point(267, 189);
+            btnModify.Name = "btnModify";
+            btnModify.Size = new Size(119, 65);
+            btnModify.TabIndex = 14;
+            btnModify.Text = "Modificar";
+            btnModify.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnModify.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnDelete
             // 
-            button3.Location = new Point(475, 210);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 15;
-            button3.Text = "Eliminar";
-            button3.UseVisualStyleBackColor = true;
+            btnDelete.Image = Properties.Resources._34217_close_delete_remove_icon;
+            btnDelete.Location = new Point(392, 192);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(117, 62);
+            btnDelete.TabIndex = 15;
+            btnDelete.Text = "Eliminar";
+            btnDelete.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnDelete.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnSave
             // 
-            button4.Location = new Point(571, 210);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 16;
-            button4.Text = "Guardar";
-            button4.UseVisualStyleBackColor = true;
+            btnSave.Image = Properties.Resources._285657_floppy_guardar_save_icon;
+            btnSave.Location = new Point(515, 192);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(131, 62);
+            btnSave.TabIndex = 16;
+            btnSave.Text = "Guardar";
+            btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSave.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnSearch
             // 
-            button5.Location = new Point(12, 210);
-            button5.Name = "button5";
-            button5.Size = new Size(125, 23);
-            button5.TabIndex = 17;
-            button5.Text = "Buscar Proyecto";
-            button5.UseVisualStyleBackColor = true;
+            btnSearch.Location = new Point(12, 210);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(125, 23);
+            btnSearch.TabIndex = 17;
+            btnSearch.Text = "Buscar Proyecto";
+            btnSearch.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnTask
             // 
-            button6.Location = new Point(457, 152);
-            button6.Name = "button6";
-            button6.Size = new Size(109, 23);
-            button6.TabIndex = 18;
-            button6.Text = "Tareas";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
+            btnTask.Image = Properties.Resources._1737367_comment_description_note_problem_task_icon;
+            btnTask.Location = new Point(416, 134);
+            btnTask.Name = "btnTask";
+            btnTask.Size = new Size(174, 52);
+            btnTask.TabIndex = 18;
+            btnTask.Text = "Tareas";
+            btnTask.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnTask.UseVisualStyleBackColor = true;
+            btnTask.Click += button6_Click;
             // 
-            // Propietario
+            // btnAddOwner
             // 
-            Propietario.Location = new Point(191, 91);
-            Propietario.Name = "Propietario";
-            Propietario.Size = new Size(154, 23);
-            Propietario.TabIndex = 0;
-            Propietario.Text = "Añadir Nuevo Propietario";
-            Propietario.UseVisualStyleBackColor = true;
-            Propietario.Click += Propietario_Click;
+            btnAddOwner.Image = Properties.Resources._3669477_add_box_ic_icon;
+            btnAddOwner.Location = new Point(191, 66);
+            btnAddOwner.Name = "btnAddOwner";
+            btnAddOwner.Size = new Size(154, 65);
+            btnAddOwner.TabIndex = 0;
+            btnAddOwner.Text = "Añadir Nuevo Propietario";
+            btnAddOwner.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAddOwner.UseVisualStyleBackColor = true;
+            btnAddOwner.Click += Propietario_Click;
             // 
-            // comboBox1
+            // cmbOwner
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(16, 91);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(150, 23);
-            comboBox1.TabIndex = 20;
+            cmbOwner.FormattingEnabled = true;
+            cmbOwner.Location = new Point(12, 91);
+            cmbOwner.Name = "cmbOwner";
+            cmbOwner.Size = new Size(150, 23);
+            cmbOwner.TabIndex = 20;
             // 
             // frmProyect
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(662, 450);
-            Controls.Add(comboBox1);
-            Controls.Add(Propietario);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(cmbOwner);
+            Controls.Add(btnAddOwner);
+            Controls.Add(btnTask);
+            Controls.Add(btnSearch);
+            Controls.Add(btnSave);
+            Controls.Add(btnDelete);
+            Controls.Add(btnModify);
+            Controls.Add(btnNewProyect);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(tblProyect);
             Controls.Add(textBox6);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
+            Controls.Add(txtId);
+            Controls.Add(txtNameProyect);
+            Controls.Add(txtDocket);
             Controls.Add(textBox1);
             Name = "frmProyect";
             Text = "frmProyect";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tblProyect).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -260,24 +270,24 @@
         #endregion
 
         private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox txtDocket;
+        private TextBox txtNameProyect;
+        private TextBox txtId;
         private TextBox textBox6;
-        private DataGridView dataGridView1;
+        private DataGridView tblProyect;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
         private Label label6;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
-        private Button Propietario;
-        private ComboBox comboBox1;
+        private Button btnNewProyect;
+        private Button btnModify;
+        private Button btnDelete;
+        private Button btnSave;
+        private Button btnSearch;
+        private Button btnTask;
+        private Button btnAddOwner;
+        private ComboBox cmbOwner;
     }
 }
