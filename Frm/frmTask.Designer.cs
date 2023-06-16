@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
-            textBox8 = new TextBox();
-            dataGridView1 = new DataGridView();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
+            txtTaskNumber = new TextBox();
+            txtEstimatedHours = new TextBox();
+            txtDescription = new TextBox();
+            txtRealCost = new TextBox();
+            txtEstimatedCost = new TextBox();
+            txtRealHours = new TextBox();
+            dateFinal = new DateTimePicker();
+            txtTaskId = new TextBox();
+            tblTask = new DataGridView();
+            btnNewTask = new Button();
+            btnModify = new Button();
+            btnSave = new Button();
+            btnDelete = new Button();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -49,113 +49,113 @@
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
-            button6 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            btnAddEmployee = new Button();
+            ((System.ComponentModel.ISupportInitialize)tblTask).BeginInit();
             SuspendLayout();
             // 
-            // textBox1
+            // txtTaskNumber
             // 
-            textBox1.Location = new Point(183, 35);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(127, 23);
-            textBox1.TabIndex = 0;
+            txtTaskNumber.Location = new Point(183, 35);
+            txtTaskNumber.Name = "txtTaskNumber";
+            txtTaskNumber.Size = new Size(127, 23);
+            txtTaskNumber.TabIndex = 0;
             // 
-            // textBox2
+            // txtEstimatedHours
             // 
-            textBox2.Location = new Point(346, 35);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(127, 23);
-            textBox2.TabIndex = 1;
+            txtEstimatedHours.Location = new Point(346, 35);
+            txtEstimatedHours.Name = "txtEstimatedHours";
+            txtEstimatedHours.Size = new Size(127, 23);
+            txtEstimatedHours.TabIndex = 1;
             // 
-            // textBox3
+            // txtDescription
             // 
-            textBox3.Location = new Point(12, 141);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.ScrollBars = ScrollBars.Vertical;
-            textBox3.Size = new Size(628, 23);
-            textBox3.TabIndex = 2;
+            txtDescription.Location = new Point(12, 141);
+            txtDescription.Multiline = true;
+            txtDescription.Name = "txtDescription";
+            txtDescription.ScrollBars = ScrollBars.Vertical;
+            txtDescription.Size = new Size(628, 23);
+            txtDescription.TabIndex = 2;
             // 
-            // textBox4
+            // txtRealCost
             // 
-            textBox4.Location = new Point(346, 94);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(127, 23);
-            textBox4.TabIndex = 3;
+            txtRealCost.Location = new Point(346, 94);
+            txtRealCost.Name = "txtRealCost";
+            txtRealCost.Size = new Size(127, 23);
+            txtRealCost.TabIndex = 3;
             // 
-            // textBox5
+            // txtEstimatedCost
             // 
-            textBox5.Location = new Point(513, 35);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(127, 23);
-            textBox5.TabIndex = 4;
+            txtEstimatedCost.Location = new Point(513, 35);
+            txtEstimatedCost.Name = "txtEstimatedCost";
+            txtEstimatedCost.Size = new Size(127, 23);
+            txtEstimatedCost.TabIndex = 4;
             // 
-            // textBox6
+            // txtRealHours
             // 
-            textBox6.Location = new Point(183, 97);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(127, 23);
-            textBox6.TabIndex = 5;
+            txtRealHours.Location = new Point(183, 97);
+            txtRealHours.Name = "txtRealHours";
+            txtRealHours.Size = new Size(127, 23);
+            txtRealHours.TabIndex = 5;
             // 
-            // dateTimePicker1
+            // dateFinal
             // 
-            dateTimePicker1.Location = new Point(513, 94);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(127, 23);
-            dateTimePicker1.TabIndex = 7;
-            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
+            dateFinal.Location = new Point(513, 94);
+            dateFinal.Name = "dateFinal";
+            dateFinal.Size = new Size(127, 23);
+            dateFinal.TabIndex = 7;
+            dateFinal.ValueChanged += dateTimePicker1_ValueChanged;
             // 
-            // textBox8
+            // txtTaskId
             // 
-            textBox8.Location = new Point(12, 35);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(88, 23);
-            textBox8.TabIndex = 8;
+            txtTaskId.Location = new Point(12, 35);
+            txtTaskId.Name = "txtTaskId";
+            txtTaskId.Size = new Size(88, 23);
+            txtTaskId.TabIndex = 8;
             // 
-            // dataGridView1
+            // tblTask
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 230);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(628, 166);
-            dataGridView1.TabIndex = 9;
+            tblTask.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            tblTask.Location = new Point(12, 230);
+            tblTask.Name = "tblTask";
+            tblTask.RowTemplate.Height = 25;
+            tblTask.Size = new Size(628, 166);
+            tblTask.TabIndex = 9;
             // 
-            // button2
+            // btnNewTask
             // 
-            button2.Location = new Point(12, 181);
-            button2.Name = "button2";
-            button2.Size = new Size(102, 23);
-            button2.TabIndex = 11;
-            button2.Text = "Nueva Tarea";
-            button2.UseVisualStyleBackColor = true;
+            btnNewTask.Location = new Point(12, 181);
+            btnNewTask.Name = "btnNewTask";
+            btnNewTask.Size = new Size(102, 23);
+            btnNewTask.TabIndex = 11;
+            btnNewTask.Text = "Nueva Tarea";
+            btnNewTask.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnModify
             // 
-            button3.Location = new Point(334, 181);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 12;
-            button3.Text = "Modificar";
-            button3.UseVisualStyleBackColor = true;
+            btnModify.Location = new Point(334, 181);
+            btnModify.Name = "btnModify";
+            btnModify.Size = new Size(75, 23);
+            btnModify.TabIndex = 12;
+            btnModify.Text = "Modificar";
+            btnModify.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnSave
             // 
-            button4.Location = new Point(444, 181);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 13;
-            button4.Text = "Guardar";
-            button4.UseVisualStyleBackColor = true;
+            btnSave.Location = new Point(444, 181);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(75, 23);
+            btnSave.TabIndex = 13;
+            btnSave.Text = "Guardar";
+            btnSave.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnDelete
             // 
-            button5.Location = new Point(565, 181);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 23);
-            button5.TabIndex = 14;
-            button5.Text = "Eliminar";
-            button5.UseVisualStyleBackColor = true;
+            btnDelete.Location = new Point(565, 181);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(75, 23);
+            btnDelete.TabIndex = 14;
+            btnDelete.Text = "Eliminar";
+            btnDelete.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -229,21 +229,22 @@
             label8.TabIndex = 22;
             label8.Text = "Descripcion";
             // 
-            // button6
+            // btnAddEmployee
             // 
-            button6.Location = new Point(183, 181);
-            button6.Name = "button6";
-            button6.Size = new Size(102, 23);
-            button6.TabIndex = 24;
-            button6.Text = "Añadir Personal";
-            button6.UseVisualStyleBackColor = true;
+            btnAddEmployee.Location = new Point(183, 181);
+            btnAddEmployee.Name = "btnAddEmployee";
+            btnAddEmployee.Size = new Size(102, 23);
+            btnAddEmployee.TabIndex = 24;
+            btnAddEmployee.Text = "Añadir Personal";
+            btnAddEmployee.UseVisualStyleBackColor = true;
+            btnAddEmployee.Click += button6_Click;
             // 
             // frmTask
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(655, 412);
-            Controls.Add(button6);
+            Controls.Add(btnAddEmployee);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -252,41 +253,41 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(dataGridView1);
-            Controls.Add(textBox8);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(btnDelete);
+            Controls.Add(btnSave);
+            Controls.Add(btnModify);
+            Controls.Add(btnNewTask);
+            Controls.Add(tblTask);
+            Controls.Add(txtTaskId);
+            Controls.Add(dateFinal);
+            Controls.Add(txtRealHours);
+            Controls.Add(txtEstimatedCost);
+            Controls.Add(txtRealCost);
+            Controls.Add(txtDescription);
+            Controls.Add(txtEstimatedHours);
+            Controls.Add(txtTaskNumber);
             Name = "frmTask";
             Text = "frmTask";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tblTask).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private DateTimePicker dateTimePicker1;
-        private TextBox textBox8;
-        private DataGridView dataGridView1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
+        private TextBox txtTaskNumber;
+        private TextBox txtEstimatedHours;
+        private TextBox txtDescription;
+        private TextBox txtRealCost;
+        private TextBox txtEstimatedCost;
+        private TextBox txtRealHours;
+        private DateTimePicker dateFinal;
+        private TextBox txtTaskId;
+        private DataGridView tblTask;
+        private Button btnNewTask;
+        private Button btnModify;
+        private Button btnSave;
+        private Button btnDelete;
         private Label label1;
         private Label label2;
         private Label label3;
@@ -295,6 +296,6 @@
         private Label label6;
         private Label label7;
         private Label label8;
-        private Button button6;
+        private Button btnAddEmployee;
     }
 }

@@ -26,5 +26,10 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
         {
 
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
