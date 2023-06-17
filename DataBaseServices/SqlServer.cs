@@ -6,170 +6,173 @@ using System.Text;
 using System.Threading.Tasks;
 using PROGRAMACION_3_TP_FINAL.Entities;
 
-public class SqlServer : dbServicesInterface
+namespace PROGRAMACION_3_TP_FINAL.DataBaseServices
 {
-    private string connectionStr;
-    public SqlServer(string connectionStr) {
-        this.connectionStr = connectionStr;
-    }
-
-    public string deleteRow(string tableName, string condition)
+    public class SqlServer : dbServicesInterface
     {
-        try
+        private string connectionStr = @"Data Source=DIEGO\SQLEXPRESS;AttachDbFilename=""D:\Visual Studio Proyects\PROGRAMACION 3 PROYECTO FINAL\proyectDB.mdf"";Integrated Security=True";
+        public SqlServer()
         {
-            using (SqlConnection connection = new SqlConnection(connectionStr))
-            {
-                connection.Open();
-
-                string deleteQuery = $"DELETE FROM {tableName} WHERE {condition}";
-
-                using (SqlCommand command = new SqlCommand(deleteQuery, connection))
-                {
-                    command.ExecuteNonQuery();
-                }
-            }
-
-            return "";
         }
-        catch (Exception ex)
+
+        public string deleteRow(string tableName, string condition)
         {
-            return ex.Message;
-        }
-    }
-    public string insertRow(object obj, string tableName)
-    {
-        try
-        {
-            using (SqlConnection connection = new SqlConnection(connectionStr))
+            try
             {
-                connection.Open();
-
-                var properties = obj.GetType().GetProperties();
-
-                string insertQuery = $"INSERT INTO {tableName} (";
-                string valuesQuery = "VALUES (";
-                bool isFirst = true;
-
-                foreach (var property in properties)
+                using (SqlConnection connection = new SqlConnection(connectionStr))
                 {
-                    if (!isFirst)
+                    connection.Open();
+
+                    string deleteQuery = $"DELETE FROM {tableName} WHERE {condition}";
+
+                    using (SqlCommand command = new SqlCommand(deleteQuery, connection))
                     {
-                        insertQuery += ", ";
-                        valuesQuery += ", ";
+                        command.ExecuteNonQuery();
                     }
-
-                    insertQuery += property.Name;
-                    valuesQuery += "@" + property.Name;
-
-                    isFirst = false;
                 }
 
-                insertQuery += ") " + valuesQuery + ")";
-
-                using (SqlCommand command = new SqlCommand(insertQuery, connection))
+                return "";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+        public string insertRow(object obj, string tableName)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionStr))
                 {
+                    connection.Open();
+
+                    var properties = obj.GetType().GetProperties();
+
+                    string insertQuery = $"INSERT INTO {tableName} (";
+                    string valuesQuery = "VALUES (";
+                    bool isFirst = true;
+
                     foreach (var property in properties)
                     {
-                        command.Parameters.AddWithValue("@" + property.Name, property.GetValue(obj));
+                        if (!isFirst)
+                        {
+                            insertQuery += ", ";
+                            valuesQuery += ", ";
+                        }
+
+                        insertQuery += property.Name;
+                        valuesQuery += "@" + property.Name;
+
+                        isFirst = false;
                     }
 
-                    command.ExecuteNonQuery();
-                }
-            }
-            return "";
-        }
-        catch (Exception ex)
-        {
-            return ex.Message;
-        }
-    }
-    public List<object> searchRow(Type objectType, string tableName, string condition)
-    {
-        List<object> resultList = new List<object>();
+                    insertQuery += ") " + valuesQuery + ")";
 
-        try
-        {
-            using (SqlConnection connection = new SqlConnection(connectionStr))
-            {
-                connection.Open();
-
-                string selectQuery = $"SELECT * FROM {tableName} WHERE {condition}";
-
-                using (SqlCommand command = new SqlCommand(selectQuery, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    using (SqlCommand command = new SqlCommand(insertQuery, connection))
                     {
-                        while (reader.Read())
+                        foreach (var property in properties)
                         {
-                            object obj = Activator.CreateInstance(objectType);
+                            command.Parameters.AddWithValue("@" + property.Name, property.GetValue(obj));
+                        }
 
-                            for (int i = 0; i < reader.FieldCount; i++)
+                        command.ExecuteNonQuery();
+                    }
+                }
+                return "";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+        public List<object> searchRow(Type objectType, string tableName, string condition)
+        {
+            List<object> resultList = new List<object>();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionStr))
+                {
+                    connection.Open();
+
+                    string selectQuery = $"SELECT * FROM {tableName} WHERE {condition}";
+
+                    using (SqlCommand command = new SqlCommand(selectQuery, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
                             {
-                                string columnName = reader.GetName(i);
-                                var property = objectType.GetProperty(columnName);
+                                object obj = Activator.CreateInstance(objectType);
 
-                                if (property != null)
+                                for (int i = 0; i < reader.FieldCount; i++)
                                 {
-                                    property.SetValue(obj, reader.GetValue(i));
-                                }
-                            }
+                                    string columnName = reader.GetName(i);
+                                    var property = objectType.GetProperty(columnName);
 
-                            resultList.Add(obj);
+                                    if (property != null)
+                                    {
+                                        property.SetValue(obj, reader.GetValue(i));
+                                    }
+                                }
+
+                                resultList.Add(obj);
+                            }
                         }
                     }
                 }
             }
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("Error al buscar filas: " + ex.Message);
-        }
-
-        return resultList;
-    }
-    public string updateRow(object obj, string tableName, string condition)
-    {
-        try
-        {
-            using (SqlConnection connection = new SqlConnection(connectionStr))
+            catch (Exception ex)
             {
-                connection.Open();
-
-                var properties = obj.GetType().GetProperties();
-
-                string updateQuery = $"UPDATE {tableName} SET ";
-                bool isFirst = true;
-
-                foreach (var property in properties)
-                {
-                    if (!isFirst)
-                    {
-                        updateQuery += ", ";
-                    }
-
-                    updateQuery += $"{property.Name} = @{property.Name}";
-
-                    isFirst = false;
-                }
-
-                updateQuery += $" WHERE {condition}";
-
-                using (SqlCommand command = new SqlCommand(updateQuery, connection))
-                {
-                    foreach (var property in properties)
-                    {
-                        command.Parameters.AddWithValue("@" + property.Name, property.GetValue(obj));
-                    }
-
-                    command.ExecuteNonQuery();
-                }
+                MessageBox.Show("Error al buscar filas: " + ex.Message);
             }
 
-            return "";
+            return resultList;
         }
-        catch (Exception ex)
+        public string updateRow(object obj, string tableName, string condition)
         {
-            return ex.Message;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionStr))
+                {
+                    connection.Open();
+
+                    var properties = obj.GetType().GetProperties();
+
+                    string updateQuery = $"UPDATE {tableName} SET ";
+                    bool isFirst = true;
+
+                    foreach (var property in properties)
+                    {
+                        if (!isFirst)
+                        {
+                            updateQuery += ", ";
+                        }
+
+                        updateQuery += $"{property.Name} = @{property.Name}";
+
+                        isFirst = false;
+                    }
+
+                    updateQuery += $" WHERE {condition}";
+
+                    using (SqlCommand command = new SqlCommand(updateQuery, connection))
+                    {
+                        foreach (var property in properties)
+                        {
+                            command.Parameters.AddWithValue("@" + property.Name, property.GetValue(obj));
+                        }
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+
+                return "";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
     }
 }

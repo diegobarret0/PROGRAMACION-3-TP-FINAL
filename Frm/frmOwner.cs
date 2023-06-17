@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PROGRAMACION_3_TP_FINAL.Entities;
+using PROGRAMACION_3_TP_FINAL.DataBaseServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,5 +28,31 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
         {
 
         }
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Proprietor myProprietor = new Proprietor(
+            txtBusinessName.Text.Trim(),
+            txtPhone.Text.Trim(),
+            txtEmail.Text.Trim(),
+            long.Parse(txtCuit.Text.Trim()),
+            txtContact.Text.Trim()
+            );
+
+            SqlServer sql = new SqlServer();
+
+            string sqlQuery = sql.insertRow(myProprietor, "dbo.proprietor");
+
+            if(sqlQuery == "")
+            {
+                MessageBox.Show("Proprietario guardado correctamente");
+            }
+            else
+            {
+                MessageBox.Show(sqlQuery);
+            }
+
+            //MessageBox.Show(myProprietor.ToString());
+        }
+        
     }
 }
