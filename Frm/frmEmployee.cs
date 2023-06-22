@@ -27,7 +27,6 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
             txtLastName.Text.Trim(),
             txtPhone.Text.Trim(),
             txtEmail.Text.Trim()
-
             );
 
             SqlServer sql = new SqlServer(); //no entiendo el error
