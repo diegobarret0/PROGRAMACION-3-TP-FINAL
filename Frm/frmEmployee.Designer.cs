@@ -87,6 +87,7 @@
             // 
             // dateAmission
             // 
+            dateAmission.Format = DateTimePickerFormat.Short;
             dateAmission.Location = new Point(567, 104);
             dateAmission.Name = "dateAmission";
             dateAmission.Size = new Size(139, 23);
@@ -176,6 +177,7 @@
             btnSave.Text = "Guardar";
             btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // btnDelete
             // 
