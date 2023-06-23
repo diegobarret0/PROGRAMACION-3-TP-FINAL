@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PROGRAMACION_3_TP_FINAL.Entities;
+using PROGRAMACION_3_TP_FINAL.DataBaseServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,31 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
         public frmEmployee()
         {
             InitializeComponent();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Employee myEmployee = new Employee(
+            int.Parse(txtDocket.Text.Trim()),
+            dateAmission.Value,
+            txtName.Text.Trim(),
+            txtLastName.Text.Trim(),
+            txtPhone.Text.Trim(),
+            txtEmail.Text.Trim()
+            );
+
+            SqlServer sql = new SqlServer(); 
+
+            string sqlQuery = sql.insertRow(myEmployee, "dbo.Employee");
+
+            if (sqlQuery == "")
+            {
+                MessageBox.Show("Empleado guardado correctamente");
+            }
+            else
+            {
+                MessageBox.Show(sqlQuery);
+            }
         }
     }
 }
