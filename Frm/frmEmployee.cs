@@ -1,4 +1,5 @@
 ﻿using PROGRAMACION_3_TP_FINAL.Entities;
+using PROGRAMACION_3_TP_FINAL.DataBaseServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +30,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
             txtEmail.Text.Trim()
             );
 
-            SqlServer sql = new SqlServer(); //no entiendo el error
+            SqlServer sql = new SqlServer(); 
 
             string sqlQuery = sql.insertRow(myEmployee, "dbo.Employee");
 
