@@ -154,19 +154,21 @@
             // 
             // btnNewProyect
             // 
-            btnNewProyect.Location = new Point(143, 210);
+            btnNewProyect.Image = Properties.Resources.proyecto;
+            btnNewProyect.Location = new Point(191, 192);
             btnNewProyect.Name = "btnNewProyect";
-            btnNewProyect.Size = new Size(105, 23);
+            btnNewProyect.Size = new Size(129, 33);
             btnNewProyect.TabIndex = 13;
             btnNewProyect.Text = "Nuevo Proyecto\r\n";
+            btnNewProyect.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnNewProyect.UseVisualStyleBackColor = true;
             // 
             // btnModify
             // 
-            btnModify.Image = Properties.Resources._2530835_compose_create_edit_edit_file_office_icon;
-            btnModify.Location = new Point(267, 189);
+            btnModify.Image = Properties.Resources.dibujo;
+            btnModify.Location = new Point(364, 192);
             btnModify.Name = "btnModify";
-            btnModify.Size = new Size(119, 65);
+            btnModify.Size = new Size(95, 33);
             btnModify.TabIndex = 14;
             btnModify.Text = "Modificar";
             btnModify.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -174,10 +176,10 @@
             // 
             // btnDelete
             // 
-            btnDelete.Image = Properties.Resources._34217_close_delete_remove_icon;
-            btnDelete.Location = new Point(392, 192);
+            btnDelete.Image = Properties.Resources.borrar;
+            btnDelete.Location = new Point(559, 192);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(117, 62);
+            btnDelete.Size = new Size(87, 33);
             btnDelete.TabIndex = 15;
             btnDelete.Text = "Eliminar";
             btnDelete.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -185,10 +187,10 @@
             // 
             // btnSave
             // 
-            btnSave.Image = Properties.Resources._285657_floppy_guardar_save_icon;
-            btnSave.Location = new Point(515, 192);
+            btnSave.Image = Properties.Resources.guardar_el_archivo;
+            btnSave.Location = new Point(465, 192);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(131, 62);
+            btnSave.Size = new Size(86, 33);
             btnSave.TabIndex = 16;
             btnSave.Text = "Guardar";
             btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -196,19 +198,21 @@
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(12, 210);
+            btnSearch.Image = Properties.Resources.search_engine_optimization;
+            btnSearch.Location = new Point(12, 192);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(125, 23);
+            btnSearch.Size = new Size(125, 33);
             btnSearch.TabIndex = 17;
             btnSearch.Text = "Buscar Proyecto";
+            btnSearch.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSearch.UseVisualStyleBackColor = true;
             // 
             // btnTask
             // 
-            btnTask.Image = Properties.Resources._1737367_comment_description_note_problem_task_icon;
-            btnTask.Location = new Point(416, 134);
+            btnTask.Image = Properties.Resources.agregar_archivo;
+            btnTask.Location = new Point(465, 145);
             btnTask.Name = "btnTask";
-            btnTask.Size = new Size(174, 52);
+            btnTask.Size = new Size(75, 30);
             btnTask.TabIndex = 18;
             btnTask.Text = "Tareas";
             btnTask.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -217,10 +221,10 @@
             // 
             // btnAddOwner
             // 
-            btnAddOwner.Image = Properties.Resources._3669477_add_box_ic_icon;
-            btnAddOwner.Location = new Point(191, 66);
+            btnAddOwner.Image = Properties.Resources.agregar_usuario;
+            btnAddOwner.Location = new Point(178, 82);
             btnAddOwner.Name = "btnAddOwner";
-            btnAddOwner.Size = new Size(154, 65);
+            btnAddOwner.Size = new Size(180, 38);
             btnAddOwner.TabIndex = 0;
             btnAddOwner.Text = "Añadir Nuevo Propietario";
             btnAddOwner.TextImageRelation = TextImageRelation.ImageBeforeText;

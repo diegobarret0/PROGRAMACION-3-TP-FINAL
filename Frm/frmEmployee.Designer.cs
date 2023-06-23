@@ -87,6 +87,7 @@
             // 
             // dateAmission
             // 
+            dateAmission.Format = DateTimePickerFormat.Short;
             dateAmission.Location = new Point(567, 104);
             dateAmission.Name = "dateAmission";
             dateAmission.Size = new Size(139, 23);
@@ -157,56 +158,69 @@
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(12, 159);
+            btnSearch.Image = Properties.Resources.search_engine_optimization;
+            btnSearch.Location = new Point(12, 152);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(75, 23);
+            btnSearch.Size = new Size(95, 30);
             btnSearch.TabIndex = 14;
             btnSearch.Text = "Buscar";
+            btnSearch.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSearch.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(540, 159);
+            btnSave.Image = Properties.Resources.guardar_el_archivo;
+            btnSave.Location = new Point(533, 152);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(75, 23);
+            btnSave.Size = new Size(85, 30);
             btnSave.TabIndex = 15;
             btnSave.Text = "Guardar";
+            btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(631, 159);
+            btnDelete.Image = Properties.Resources.borrar;
+            btnDelete.Location = new Point(624, 152);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(75, 23);
+            btnDelete.Size = new Size(82, 30);
             btnDelete.TabIndex = 16;
             btnDelete.Text = "Eliminar";
+            btnDelete.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnModify
             // 
-            btnModify.Location = new Point(444, 159);
+            btnModify.Image = Properties.Resources.dibujo;
+            btnModify.Location = new Point(434, 152);
             btnModify.Name = "btnModify";
-            btnModify.Size = new Size(75, 23);
+            btnModify.Size = new Size(93, 30);
             btnModify.TabIndex = 17;
             btnModify.Text = "Modificar";
+            btnModify.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnModify.UseVisualStyleBackColor = true;
             // 
             // btnNewEmployee
             // 
-            btnNewEmployee.Location = new Point(296, 159);
+            btnNewEmployee.Image = Properties.Resources.agregar_usuario;
+            btnNewEmployee.Location = new Point(115, 152);
             btnNewEmployee.Name = "btnNewEmployee";
-            btnNewEmployee.Size = new Size(113, 23);
+            btnNewEmployee.Size = new Size(135, 30);
             btnNewEmployee.TabIndex = 18;
             btnNewEmployee.Text = "Nuevo Empleado";
+            btnNewEmployee.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnNewEmployee.UseVisualStyleBackColor = true;
             // 
             // btnObservation
             // 
-            btnObservation.Location = new Point(130, 159);
+            btnObservation.Image = Properties.Resources.agregar_contacto;
+            btnObservation.Location = new Point(265, 152);
             btnObservation.Name = "btnObservation";
-            btnObservation.Size = new Size(120, 23);
+            btnObservation.Size = new Size(154, 30);
             btnObservation.TabIndex = 19;
             btnObservation.Text = "Añadir Observacion";
+            btnObservation.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnObservation.UseVisualStyleBackColor = true;
             // 
             // frmEmployee

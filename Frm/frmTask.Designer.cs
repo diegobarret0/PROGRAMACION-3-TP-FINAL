@@ -123,38 +123,46 @@
             // 
             // btnNewTask
             // 
-            btnNewTask.Location = new Point(12, 181);
+            btnNewTask.Image = Properties.Resources.agregar_archivo;
+            btnNewTask.Location = new Point(12, 176);
             btnNewTask.Name = "btnNewTask";
-            btnNewTask.Size = new Size(102, 23);
+            btnNewTask.Size = new Size(128, 33);
             btnNewTask.TabIndex = 11;
             btnNewTask.Text = "Nueva Tarea";
+            btnNewTask.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnNewTask.UseVisualStyleBackColor = true;
             // 
             // btnModify
             // 
-            btnModify.Location = new Point(334, 181);
+            btnModify.Image = Properties.Resources.dibujo;
+            btnModify.Location = new Point(334, 176);
             btnModify.Name = "btnModify";
-            btnModify.Size = new Size(75, 23);
+            btnModify.Size = new Size(105, 33);
             btnModify.TabIndex = 12;
             btnModify.Text = "Modificar";
+            btnModify.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnModify.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(444, 181);
+            btnSave.Image = Properties.Resources.guardar_el_archivo;
+            btnSave.Location = new Point(445, 176);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(75, 23);
+            btnSave.Size = new Size(96, 33);
             btnSave.TabIndex = 13;
             btnSave.Text = "Guardar";
+            btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSave.UseVisualStyleBackColor = true;
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(565, 181);
+            btnDelete.Image = Properties.Resources.borrar;
+            btnDelete.Location = new Point(547, 176);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(75, 23);
+            btnDelete.Size = new Size(93, 33);
             btnDelete.TabIndex = 14;
             btnDelete.Text = "Eliminar";
+            btnDelete.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnDelete.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -231,11 +239,13 @@
             // 
             // btnAddEmployee
             // 
-            btnAddEmployee.Location = new Point(183, 181);
+            btnAddEmployee.Image = Properties.Resources.agregar_usuario;
+            btnAddEmployee.Location = new Point(183, 176);
             btnAddEmployee.Name = "btnAddEmployee";
-            btnAddEmployee.Size = new Size(102, 23);
+            btnAddEmployee.Size = new Size(127, 33);
             btnAddEmployee.TabIndex = 24;
             btnAddEmployee.Text = "Añadir Personal";
+            btnAddEmployee.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnAddEmployee.UseVisualStyleBackColor = true;
             btnAddEmployee.Click += button6_Click;
             // 
