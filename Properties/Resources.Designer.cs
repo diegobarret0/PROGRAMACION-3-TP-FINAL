@@ -10,8 +10,9 @@
 
 namespace PROGRAMACION_3_TP_FINAL.Properties {
     using System;
-    
-    
+    using System.Drawing;
+
+
     /// <summary>
     ///   Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
     /// </summary>
@@ -23,7 +24,14 @@ namespace PROGRAMACION_3_TP_FINAL.Properties {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
-        
+        internal static Image search_engine_optimization;
+        internal static Image dibujo;
+        internal static Image guardar_el_archivo;
+        internal static Image borrar;
+        internal static Image agregar_archivo;
+        internal static Image agregar_usuario;
+        internal static Image agregar_contacto;
+        internal static Image proyecto;
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
@@ -186,86 +194,6 @@ namespace PROGRAMACION_3_TP_FINAL.Properties {
         internal static System.Drawing.Bitmap _9042816_page_search_icon {
             get {
                 object obj = ResourceManager.GetObject("9042816_page_search_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap agregar_archivo {
-            get {
-                object obj = ResourceManager.GetObject("agregar-archivo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap agregar_contacto {
-            get {
-                object obj = ResourceManager.GetObject("agregar-contacto", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap agregar_usuario {
-            get {
-                object obj = ResourceManager.GetObject("agregar-usuario", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap borrar {
-            get {
-                object obj = ResourceManager.GetObject("borrar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap dibujo {
-            get {
-                object obj = ResourceManager.GetObject("dibujo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap guardar_el_archivo {
-            get {
-                object obj = ResourceManager.GetObject("guardar-el-archivo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap proyecto {
-            get {
-                object obj = ResourceManager.GetObject("proyecto", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap search_engine_optimization {
-            get {
-                object obj = ResourceManager.GetObject("search-engine-optimization", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
