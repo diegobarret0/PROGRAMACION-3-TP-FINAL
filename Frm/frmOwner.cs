@@ -1,5 +1,6 @@
 ﻿using PROGRAMACION_3_TP_FINAL.Entities;
 using PROGRAMACION_3_TP_FINAL.DataBaseServices;
+using PROGRAMACION_3_TP_FINAL.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,28 +31,52 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Proprietor myProprietor = new Proprietor(
-            txtBusinessName.Text.Trim(),
-            txtPhone.Text.Trim(),
-            txtEmail.Text.Trim(),
-            long.Parse(txtCuit.Text.Trim()),
-            txtContact.Text.Trim()
-            );
+            string companyName = txtBusinessName.Text.Trim();
+            string ciut = txtCuit.Text.Trim();
+            string phone = txtPhone.Text.Trim();
+            string email = txtEmail.Text.Trim();
+            string contact = txtContact.Text.Trim();
+            string valid = validation(companyName, ciut, phone, email, contact);
 
-            SqlServer sql = new SqlServer();
+            if (valid == "") { 
+                Proprietor myProprietor = new Proprietor(
+                companyName,
+                phone,
+                email,
+                long.Parse(ciut),
+                contact
+                );
 
-            string sqlQuery = sql.insertRow(myProprietor, "dbo.proprietor");
+                SqlServer sql = new SqlServer();
 
-            if(sqlQuery == "")
-            {
-                MessageBox.Show("Proprietario guardado correctamente");
+                string sqlQuery = sql.insertRow(myProprietor, "dbo.proprietor");
+
+                if (sqlQuery == "")
+                {
+                    MessageBox.Show("Proprietario guardado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show(sqlQuery);
+                }                   
             }
             else
             {
-                MessageBox.Show(sqlQuery);
+                MessageBox.Show($"Por favor ingrese correctamente los siguientes campos:\n{valid}");
             }
+        }
 
-            //MessageBox.Show(myProprietor.ToString());
+        private string validation(string companyName, string cuit, string phone, string email, string contact)
+        {
+            Validation valid = new Validation();
+            string errors = "";
+
+            if (!valid.textValidation(companyName)) errors += "Razon social\n";
+            if (!valid.numericValidation(cuit)) errors += "Ciut\n";
+            if (!valid.numericValidation(phone)) errors += "Telefono\n";
+            if (!valid.emailValidation(email)) errors += "Email";
+
+            return errors;
         }
         
     }
