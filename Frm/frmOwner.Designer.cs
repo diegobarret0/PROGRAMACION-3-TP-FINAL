@@ -153,6 +153,7 @@
             btnModify.Text = "Modificar";
             btnModify.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnModify.UseVisualStyleBackColor = true;
+            btnModify.Click += BtnModify_Click;
             // 
             // btnSave
             // 
@@ -185,6 +186,7 @@
             tblOwner.RowTemplate.Height = 25;
             tblOwner.Size = new Size(650, 150);
             tblOwner.TabIndex = 15;
+            tblOwner.CellClick += TblOwner_CellClick;
             // 
             // frmOwner
             // 

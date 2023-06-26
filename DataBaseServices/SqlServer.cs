@@ -54,6 +54,7 @@ namespace PROGRAMACION_3_TP_FINAL.DataBaseServices
 
                     foreach (var property in properties)
                     {
+                        if (property.Name == "id") continue;
                         if (!isFirst)
                         {
                             insertQuery += ", ";
@@ -144,6 +145,7 @@ namespace PROGRAMACION_3_TP_FINAL.DataBaseServices
 
                     foreach (var property in properties)
                     {
+                        if (property.Name == "id") continue;
                         if (!isFirst)
                         {
                             updateQuery += ", ";
