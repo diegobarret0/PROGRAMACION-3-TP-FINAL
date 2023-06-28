@@ -180,6 +180,7 @@
             // 
             // tblOwner
             // 
+            tblOwner.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             tblOwner.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tblOwner.Location = new Point(12, 243);
             tblOwner.Name = "tblOwner";

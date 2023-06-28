@@ -33,7 +33,7 @@
             txtLastName = new TextBox();
             txtPhone = new TextBox();
             txtEmail = new TextBox();
-            dateAmission = new DateTimePicker();
+            dateAdmission = new DateTimePicker();
             tblEmployee = new DataGridView();
             label1 = new Label();
             label2 = new Label();
@@ -85,22 +85,24 @@
             txtEmail.Size = new Size(238, 23);
             txtEmail.TabIndex = 5;
             // 
-            // dateAmission
+            // dateAdmission
             // 
-            dateAmission.Format = DateTimePickerFormat.Short;
-            dateAmission.Location = new Point(567, 104);
-            dateAmission.Name = "dateAmission";
-            dateAmission.Size = new Size(139, 23);
-            dateAmission.TabIndex = 6;
+            dateAdmission.Format = DateTimePickerFormat.Short;
+            dateAdmission.Location = new Point(567, 104);
+            dateAdmission.Name = "dateAdmission";
+            dateAdmission.Size = new Size(139, 23);
+            dateAdmission.TabIndex = 6;
             // 
             // tblEmployee
             // 
+            tblEmployee.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             tblEmployee.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tblEmployee.Location = new Point(12, 202);
             tblEmployee.Name = "tblEmployee";
             tblEmployee.RowTemplate.Height = 25;
             tblEmployee.Size = new Size(694, 173);
             tblEmployee.TabIndex = 7;
+            tblEmployee.CellContentClick += tblEmployee_CellContentClick;
             // 
             // label1
             // 
@@ -189,6 +191,7 @@
             btnDelete.Text = "Eliminar";
             btnDelete.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnModify
             // 
@@ -200,6 +203,7 @@
             btnModify.Text = "Modificar";
             btnModify.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnModify.UseVisualStyleBackColor = true;
+            btnModify.Click += btnModify_Click;
             // 
             // btnNewEmployee
             // 
@@ -222,6 +226,7 @@
             btnObservation.Text = "Añadir Observacion";
             btnObservation.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnObservation.UseVisualStyleBackColor = true;
+            btnObservation.Click += btnObservation_Click;
             // 
             // frmEmployee
             // 
@@ -241,7 +246,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(tblEmployee);
-            Controls.Add(dateAmission);
+            Controls.Add(dateAdmission);
             Controls.Add(txtEmail);
             Controls.Add(txtPhone);
             Controls.Add(txtLastName);
@@ -261,7 +266,7 @@
         private TextBox txtLastName;
         private TextBox txtPhone;
         private TextBox txtEmail;
-        private DateTimePicker dateAmission;
+        private DateTimePicker dateAdmission;
         private DataGridView tblEmployee;
         private Label label1;
         private Label label2;
