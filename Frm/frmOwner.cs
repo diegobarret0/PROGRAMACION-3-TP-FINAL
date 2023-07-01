@@ -198,5 +198,20 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
 
             modify = true;
         }
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            SqlServer sql = new SqlServer();
+            string sqlQuery = sql.deleteRow("dbo.proprietor", $"id={id};");
+
+            if (sqlQuery == "")
+            {
+                MessageBox.Show("Propietario eliminado correctamente.");
+            }
+            else
+            {
+                MessageBox.Show($"Error al eliminar propietario:\n{sqlQuery}");
+            }
+            tblOwner.DataSource = new SqlServer().searchRow(typeof(Proprietor), "dbo.proprietor", "1=1");
+        }
     }
 }

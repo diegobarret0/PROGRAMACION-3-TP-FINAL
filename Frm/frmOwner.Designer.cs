@@ -177,6 +177,7 @@
             btnDelete.Text = "Eliminar";
             btnDelete.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += BtnDelete_Click;
             // 
             // tblOwner
             // 

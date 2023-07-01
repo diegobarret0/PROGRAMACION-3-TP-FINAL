@@ -16,22 +16,6 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Propietario_Click(object sender, EventArgs e)
         {
             Frm.frmOwner frmOwner = new frmOwner();

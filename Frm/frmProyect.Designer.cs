@@ -78,7 +78,6 @@
             txtId.Name = "txtId";
             txtId.Size = new Size(88, 23);
             txtId.TabIndex = 3;
-            txtId.TextChanged += textBox4_TextChanged;
             // 
             // textBox6
             // 
@@ -104,7 +103,6 @@
             label1.Size = new Size(18, 15);
             label1.TabIndex = 7;
             label1.Text = "ID";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -150,7 +148,6 @@
             label6.Size = new Size(42, 15);
             label6.TabIndex = 12;
             label6.Text = "Legajo";
-            label6.Click += label6_Click;
             // 
             // btnNewProyect
             // 
