@@ -10,12 +10,12 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
     {
         private int id_;
         private string name;
-        private float estimatedAmount;
+        private decimal estimatedAmount;
         private int estimatedTime;
         private int proprietorId;
         private int leaderFile;
 
-        public Project(string name, float estimatedAmount, int estimatedTime, int proprietorId, int leaderFile)
+        public Project(string name, decimal estimatedAmount, int estimatedTime, int proprietorId, int leaderFile)
         {
             name_ = name;
             estimated_amount = estimatedAmount;
@@ -35,7 +35,7 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
             get { return name; }
             set { name = value; }
         }
-        public float estimated_amount
+        public decimal estimated_amount
         {
             get { return estimatedAmount; }
             set { estimatedAmount = value; }

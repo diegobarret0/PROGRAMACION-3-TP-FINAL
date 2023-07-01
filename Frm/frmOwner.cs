@@ -60,7 +60,6 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
 
             tblOwner.DataSource = new SqlServer().searchRow(typeof(Proprietor), "dbo.proprietor", "1=1");
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -73,21 +72,21 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
         {
             if (!modify)
             {
-                string companyName = txtBusinessName.Text.Trim();
-                string ciut = txtCuit.Text.Trim();
-                string phone = txtPhone.Text.Trim();
-                string email = txtEmail.Text.Trim();
-                string contact = txtContact.Text.Trim();
-                string valid = validation(companyName, ciut, phone, email, contact);
+                companyName = txtBusinessName.Text.Trim();
+                cuit = txtCuit.Text.Trim();
+                phoneNumber = txtPhone.Text.Trim();
+                email = txtEmail.Text.Trim();
+                contactPerson = txtContact.Text.Trim();
+                string valid = validation(companyName, cuit, phoneNumber, email, contactPerson);
 
                 if (valid == "")
                 {
                     Proprietor myProprietor = new Proprietor(
                     companyName,
-                    phone,
+                    phoneNumber,
                     email,
-                    long.Parse(ciut),
-                    contact
+                    long.Parse(cuit),
+                    contactPerson
                     );
 
                     SqlServer sql = new SqlServer();
@@ -97,6 +96,13 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                     if (sqlQuery == "")
                     {
                         MessageBox.Show("Proprietario guardado correctamente");
+                        txtNameOwner.Text = "";
+                        txtBusinessName.Text = "";
+                        txtPhone.Text = "";
+                        txtEmail.Text = "";
+                        txtCuit.Text = "";
+                        txtContact.Text = "";
+                        modify = true;
                     }
                     else
                     {
@@ -107,30 +113,25 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                 {
                     MessageBox.Show($"Por favor ingrese correctamente los siguientes campos:\n{valid}");
                 }
-                txtNameOwner.Text = "";
-                txtBusinessName.Text = "";
-                txtPhone.Text = "";
-                txtEmail.Text = "";
-                txtCuit.Text = "";
-                txtContact.Text = "";
+                modify = false;
             }
             else
             {
-                string companyName = txtBusinessName.Text.Trim();
-                string ciut = txtCuit.Text.Trim();
-                string phone = txtPhone.Text.Trim();
-                string email = txtEmail.Text.Trim();
-                string contact = txtContact.Text.Trim();
-                string valid = validation(companyName, ciut, phone, email, contact);
+                companyName = txtBusinessName.Text.Trim();
+                cuit = txtCuit.Text.Trim();
+                phoneNumber = txtPhone.Text.Trim();
+                email = txtEmail.Text.Trim();
+                contactPerson = txtContact.Text.Trim();
+                string valid = validation(companyName, cuit, phoneNumber, email, contactPerson);
 
                 if (valid == "")
                 {
                     Proprietor myProprietor = new Proprietor(
                     companyName,
-                    phone,
+                    phoneNumber,
                     email,
-                    long.Parse(ciut),
-                    contact
+                    long.Parse(cuit),
+                    contactPerson
                     );
 
                     SqlServer sql = new SqlServer();
@@ -140,6 +141,13 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                     if (sqlQuery == "")
                     {
                         MessageBox.Show("Proprietario moficado correctamente");
+                        txtNameOwner.Text = "";
+                        txtBusinessName.Text = "";
+                        txtPhone.Text = "";
+                        txtEmail.Text = "";
+                        txtCuit.Text = "";
+                        txtContact.Text = "";
+                        modify = false;
                     }
                     else
                     {
@@ -150,14 +158,6 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                 {
                     MessageBox.Show($"Por favor ingrese correctamente los siguientes campos:\n{valid}");
                 }
-
-                txtNameOwner.Text = "";
-                txtBusinessName.Text = "";
-                txtPhone.Text = "";
-                txtEmail.Text = "";
-                txtCuit.Text = "";
-                txtContact.Text = "";
-                modify = false;
             }
             tblOwner.DataSource = new SqlServer().searchRow(typeof(Proprietor), "dbo.proprietor", "1=1");
         }

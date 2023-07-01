@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             textBox1 = new TextBox();
             txtDocket = new TextBox();
             txtNameProyect = new TextBox();
@@ -48,7 +49,11 @@
             btnTask = new Button();
             btnAddOwner = new Button();
             cmbOwner = new ComboBox();
+            proprietorBindingSource = new BindingSource(components);
+            proprietorBindingSource1 = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)tblProyect).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)proprietorBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)proprietorBindingSource1).BeginInit();
             SuspendLayout();
             // 
             // textBox1
@@ -94,6 +99,7 @@
             tblProyect.RowTemplate.Height = 25;
             tblProyect.Size = new Size(634, 178);
             tblProyect.TabIndex = 6;
+            tblProyect.CellClick += TblProyect_CellClick;
             // 
             // label1
             // 
@@ -170,6 +176,7 @@
             btnModify.Text = "Modificar";
             btnModify.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnModify.UseVisualStyleBackColor = true;
+            btnModify.Click += BtnModify_Click;
             // 
             // btnDelete
             // 
@@ -181,6 +188,7 @@
             btnDelete.Text = "Eliminar";
             btnDelete.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += BtnDelete_Click;
             // 
             // btnSave
             // 
@@ -192,6 +200,7 @@
             btnSave.Text = "Guardar";
             btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += BtnSave_Click;
             // 
             // btnSearch
             // 
@@ -264,6 +273,8 @@
             Name = "frmProyect";
             Text = "frmProyect";
             ((System.ComponentModel.ISupportInitialize)tblProyect).EndInit();
+            ((System.ComponentModel.ISupportInitialize)proprietorBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)proprietorBindingSource1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -290,5 +301,7 @@
         private Button btnTask;
         private Button btnAddOwner;
         private ComboBox cmbOwner;
+        private BindingSource proprietorBindingSource;
+        private BindingSource proprietorBindingSource1;
     }
 }
