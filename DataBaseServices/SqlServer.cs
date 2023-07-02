@@ -10,7 +10,7 @@ namespace PROGRAMACION_3_TP_FINAL.DataBaseServices
 {
     public class SqlServer : dbServicesInterface
     {
-        private string connectionStr = @"Data Source=DESKTOP-GLJMCO1\SQLEXPRESS;Initial Catalog=projectDB;Integrated Security=True";
+        private string connectionStr = @"Data Source=DIEGO\SQLEXPRESS;Initial Catalog=projectDB;Integrated Security=True";
         public SqlServer()
         {
         }

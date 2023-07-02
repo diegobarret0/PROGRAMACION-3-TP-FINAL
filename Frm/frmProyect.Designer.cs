@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             textBox1 = new TextBox();
             txtDocket = new TextBox();
             txtNameProyect = new TextBox();
@@ -48,7 +49,11 @@
             btnTask = new Button();
             btnAddOwner = new Button();
             cmbOwner = new ComboBox();
+            proprietorBindingSource = new BindingSource(components);
+            proprietorBindingSource1 = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)tblProyect).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)proprietorBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)proprietorBindingSource1).BeginInit();
             SuspendLayout();
             // 
             // textBox1
@@ -78,7 +83,6 @@
             txtId.Name = "txtId";
             txtId.Size = new Size(88, 23);
             txtId.TabIndex = 3;
-            txtId.TextChanged += textBox4_TextChanged;
             // 
             // textBox6
             // 
@@ -95,6 +99,7 @@
             tblProyect.RowTemplate.Height = 25;
             tblProyect.Size = new Size(634, 178);
             tblProyect.TabIndex = 6;
+            tblProyect.CellClick += TblProyect_CellClick;
             // 
             // label1
             // 
@@ -104,7 +109,6 @@
             label1.Size = new Size(18, 15);
             label1.TabIndex = 7;
             label1.Text = "ID";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -150,7 +154,6 @@
             label6.Size = new Size(42, 15);
             label6.TabIndex = 12;
             label6.Text = "Legajo";
-            label6.Click += label6_Click;
             // 
             // btnNewProyect
             // 
@@ -173,6 +176,7 @@
             btnModify.Text = "Modificar";
             btnModify.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnModify.UseVisualStyleBackColor = true;
+            btnModify.Click += BtnModify_Click;
             // 
             // btnDelete
             // 
@@ -184,6 +188,7 @@
             btnDelete.Text = "Eliminar";
             btnDelete.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += BtnDelete_Click;
             // 
             // btnSave
             // 
@@ -195,6 +200,7 @@
             btnSave.Text = "Guardar";
             btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += BtnSave_Click;
             // 
             // btnSearch
             // 
@@ -267,6 +273,8 @@
             Name = "frmProyect";
             Text = "frmProyect";
             ((System.ComponentModel.ISupportInitialize)tblProyect).EndInit();
+            ((System.ComponentModel.ISupportInitialize)proprietorBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)proprietorBindingSource1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -293,5 +301,7 @@
         private Button btnTask;
         private Button btnAddOwner;
         private ComboBox cmbOwner;
+        private BindingSource proprietorBindingSource;
+        private BindingSource proprietorBindingSource1;
     }
 }

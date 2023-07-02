@@ -8,7 +8,7 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
 {
     public class Proprietor
     {
-        public int id_;
+        private int id_;
         private string companyName;
         private string phoneNumber;
         private string email_;
@@ -66,7 +66,7 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
         }
         public override string ToString()
         {
-            return $"Company Name: {companyName}\nPhone Number: {phoneNumber}\nEmail: {email_}\nCUIT: {cuit_}\nContact Person: {contactPerson}";
+            return $"Id: {id_}\nCompany Name: {companyName}\nPhone Number: {phoneNumber}\nEmail: {email_}\nCUIT: {cuit_}\nContact Person: {contactPerson}";
         }
     }
 }
