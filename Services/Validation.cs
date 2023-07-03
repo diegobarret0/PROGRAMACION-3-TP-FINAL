@@ -20,6 +20,20 @@ namespace PROGRAMACION_3_TP_FINAL.Services
             return true;
         }
 
+        public bool decimalValidation(string str)
+        {
+            if (string.IsNullOrWhiteSpace(str))
+            {
+                return false;
+            }
+            if (!Regex.IsMatch(str, @"^-?(([1-9]\d*)|0)(.0*[0-9](0*[0-9])*)?$"))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         public bool numericValidation(string str)
         {
             if (string.IsNullOrWhiteSpace(str))
