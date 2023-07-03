@@ -226,5 +226,10 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                 MessageBox.Show(sqlQuery);
             }
         }
+
+        private void btnNewEmployee_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

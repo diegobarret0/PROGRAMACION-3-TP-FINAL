@@ -215,6 +215,7 @@
             btnNewEmployee.Text = "Nuevo Empleado";
             btnNewEmployee.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnNewEmployee.UseVisualStyleBackColor = true;
+            btnNewEmployee.Click += btnNewEmployee_Click;
             // 
             // btnObservation
             // 
