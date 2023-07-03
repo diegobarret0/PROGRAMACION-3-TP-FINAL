@@ -51,6 +51,7 @@
             cmbOwner = new ComboBox();
             proprietorBindingSource = new BindingSource(components);
             proprietorBindingSource1 = new BindingSource(components);
+            cbxIsActive = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)tblProyect).BeginInit();
             ((System.ComponentModel.ISupportInitialize)proprietorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)proprietorBindingSource1).BeginInit();
@@ -216,7 +217,7 @@
             // btnTask
             // 
             btnTask.Image = Properties.Resources.agregar_archivo;
-            btnTask.Location = new Point(465, 145);
+            btnTask.Location = new Point(476, 147);
             btnTask.Name = "btnTask";
             btnTask.Size = new Size(75, 30);
             btnTask.TabIndex = 18;
@@ -245,11 +246,22 @@
             cmbOwner.Size = new Size(150, 23);
             cmbOwner.TabIndex = 20;
             // 
+            // cbxIsActive
+            // 
+            cbxIsActive.AutoSize = true;
+            cbxIsActive.Location = new Point(377, 154);
+            cbxIsActive.Name = "cbxIsActive";
+            cbxIsActive.Size = new Size(79, 19);
+            cbxIsActive.TabIndex = 21;
+            cbxIsActive.Text = "Finalizado";
+            cbxIsActive.UseVisualStyleBackColor = true;
+            // 
             // frmProyect
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(662, 450);
+            Controls.Add(cbxIsActive);
             Controls.Add(cmbOwner);
             Controls.Add(btnAddOwner);
             Controls.Add(btnTask);
@@ -303,5 +315,6 @@
         private ComboBox cmbOwner;
         private BindingSource proprietorBindingSource;
         private BindingSource proprietorBindingSource1;
+        private CheckBox cbxIsActive;
     }
 }

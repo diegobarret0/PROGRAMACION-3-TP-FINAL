@@ -28,6 +28,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
         {
             InitializeComponent();
             txtId.Enabled = false;
+            cbxIsActive.Enabled = false;
 
             DataGridViewColumn idColumn = new DataGridViewTextBoxColumn();
             idColumn.HeaderText = "ID";
@@ -61,9 +62,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
             tblProyect.Columns.Add(proprietorColumn);
             tblProyect.Columns.Add(leaderColumn);
 
-            //List<object> myList = new SqlServer().searchRow(typeof(Proprietor), "dbo.proprietor", "1=1");
             cmbOwner.DataSource = new SqlServer().searchRow(typeof(Proprietor), "dbo.proprietor", "1=1");
-            //MessageBox.Show(myList[0].ToString());
             cmbOwner.DisplayMember = "company_name";
 
             tblProyect.DataSource = new SqlServer().searchRow(typeof(Project), "dbo.project", "1=1");
@@ -76,7 +75,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
         }
         private void btnTask_Click(object sender, EventArgs e)
         {
-            if(id == "")
+            if (id == "")
             {
                 MessageBox.Show($"Seleccione un proyecto");
             }
