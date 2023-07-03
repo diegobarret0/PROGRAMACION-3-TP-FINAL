@@ -248,7 +248,7 @@
             btnAddEmployee.Size = new Size(127, 33);
             btnAddEmployee.TabIndex = 24;
             btnAddEmployee.Text = "Añadir Personal";
-            btnAddEmployee.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnAddEmployee.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnAddEmployee.UseVisualStyleBackColor = true;
             // 
             // frmTask
@@ -283,7 +283,7 @@
             ((System.ComponentModel.ISupportInitialize)tblTask).EndInit();
             ResumeLayout(false);
             PerformLayout();
-        }      
+        }
 
         #endregion
 

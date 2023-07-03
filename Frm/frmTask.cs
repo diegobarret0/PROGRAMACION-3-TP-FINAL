@@ -181,7 +181,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
         }
         private void TblTask_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = tblTask.Rows[e.RowIndex];
 
