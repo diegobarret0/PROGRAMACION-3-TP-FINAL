@@ -18,7 +18,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
     public partial class frmProyect : Form
     {
         private bool modify = false;
-        private string id;
+        private string id = "";
         private string projectName;
         private string estimatedAmount;
         private string estimatedTime;
@@ -27,6 +27,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
         public frmProyect()
         {
             InitializeComponent();
+            txtId.Enabled = false;
 
             DataGridViewColumn idColumn = new DataGridViewTextBoxColumn();
             idColumn.HeaderText = "ID";
@@ -73,11 +74,17 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
 
             frmOwner.Show();
         }
-        private void button6_Click(object sender, EventArgs e)
+        private void btnTask_Click(object sender, EventArgs e)
         {
-            Frm.frmTask frmTask = new frmTask();
-
-            frmTask.Show();
+            if(id == "")
+            {
+                MessageBox.Show($"Seleccione un proyecto");
+            }
+            else
+            {
+                Frm.frmTask frmTask = new frmTask(id);
+                frmTask.Show();
+            }
         }
         private void BtnSave_Click(object sender, EventArgs e)
         {
@@ -209,7 +216,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
 
             if (!valid.numericValidation(leaderFile)) errors += "Legajo\n";
             if (!valid.textValidation(projectName)) errors += "Nombre del proyecto\n";
-            if (!valid.numericValidation(estimatedAmount)) errors += "Costo estimado\n";
+            if (!valid.decimalValidation(estimatedAmount)) errors += "Costo estimado\n";
             if (!valid.numericValidation(estimatedTime)) errors += "Tiempo estimado";
 
             return errors;
