@@ -12,12 +12,12 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
         private int projectId;
         private string description;
         private int estimatedHours;
-        private float estimatedCost;
+        private decimal estimatedCost;
         private int actualHours;
-        private float actualCost;
+        private decimal actualCost;
         private DateTime endDate;
 
-        public Task(int projectId, string description, int estimatedHours, float estimatedCost, int actualHours, float actualCost, DateTime endDate)
+        public Task(int projectId, string description, int estimatedHours, decimal estimatedCost, int actualHours, decimal actualCost, DateTime endDate)
         {
             proyect_id = projectId;
             description_ = description;
@@ -49,7 +49,7 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
             get { return estimatedHours; }
             set { estimatedHours = value; }
         }
-        public float estimated_cost
+        public decimal estimated_cost
         {
             get { return estimatedCost; }
             set { estimatedCost = value; }
@@ -59,7 +59,7 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
             get { return actualHours; }
             set { actualHours = value; }
         }
-        public float actual_cost
+        public decimal actual_cost
         {
             get { return actualCost; }
             set { actualCost = value; }

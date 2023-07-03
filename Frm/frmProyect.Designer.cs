@@ -223,7 +223,7 @@
             btnTask.Text = "Tareas";
             btnTask.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnTask.UseVisualStyleBackColor = true;
-            btnTask.Click += button6_Click;
+            btnTask.Click += btnTask_Click;
             // 
             // btnAddOwner
             // 

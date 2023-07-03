@@ -170,7 +170,6 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
 
         private void viewList()
         {
-
             tblEmployee.DataSource = new SqlServer().searchRow(typeof(Employee), "dbo.employee", "1=1");
         }
 
