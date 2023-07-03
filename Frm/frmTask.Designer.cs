@@ -103,7 +103,6 @@
             dateFinal.Name = "dateFinal";
             dateFinal.Size = new Size(127, 23);
             dateFinal.TabIndex = 7;
-            dateFinal.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // txtTaskId
             // 
@@ -120,6 +119,7 @@
             tblTask.RowTemplate.Height = 25;
             tblTask.Size = new Size(628, 166);
             tblTask.TabIndex = 9;
+            tblTask.CellClick += TblTask_CellClick;
             // 
             // btnNewTask
             // 
@@ -142,6 +142,7 @@
             btnModify.Text = "Modificar";
             btnModify.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnModify.UseVisualStyleBackColor = true;
+            btnModify.Click += BtnModify_Click;
             // 
             // btnSave
             // 
@@ -153,6 +154,7 @@
             btnSave.Text = "Guardar";
             btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += BtnSave_Click;
             // 
             // btnDelete
             // 
@@ -164,6 +166,7 @@
             btnDelete.Text = "Eliminar";
             btnDelete.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += BtnDelete_Click;
             // 
             // label1
             // 
@@ -240,14 +243,14 @@
             // btnAddEmployee
             // 
             btnAddEmployee.Image = Properties.Resources.agregar_usuario;
+            btnAddEmployee.ImageAlign = ContentAlignment.BottomCenter;
             btnAddEmployee.Location = new Point(183, 176);
             btnAddEmployee.Name = "btnAddEmployee";
             btnAddEmployee.Size = new Size(127, 33);
             btnAddEmployee.TabIndex = 24;
             btnAddEmployee.Text = "Añadir Personal";
-            btnAddEmployee.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAddEmployee.TextImageRelation = TextImageRelation.ImageAboveText;
             btnAddEmployee.UseVisualStyleBackColor = true;
-            btnAddEmployee.Click += button6_Click;
             // 
             // frmTask
             // 
@@ -281,7 +284,7 @@
             ((System.ComponentModel.ISupportInitialize)tblTask).EndInit();
             ResumeLayout(false);
             PerformLayout();
-        }
+        }      
 
         #endregion
 
