@@ -18,16 +18,18 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
     {
 
         private bool modify = false;
-        private string docket;
-        private string dateAdmision;
-        private string name;
-        private string lastName;
-        private string phoneNumber;
-        private string email;
+        private string fileNumber = "";
+        private string dateAdmision = "";
+        private string name = "";
+        private string lastName = "";
+        private string phoneNumber = "";
+        private string email = "";
 
         public frmEmployee()
         {
             InitializeComponent();
+            txtDocket.Enabled = false;
+            txtSearch.PlaceholderText = "Nombre";
 
             DataGridViewColumn docketColumn = new DataGridViewTextBoxColumn();
             docketColumn.HeaderText = "Legajo";
@@ -60,13 +62,11 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
             tblEmployee.Columns.Add(phoneColumn);
             tblEmployee.Columns.Add(emailColumn);
 
-
-            tblEmployee.DataSource = new SqlServer().searchRow(typeof(Employee), "dbo.employee", "1=1");
+            viewList();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
             if (!modify)
             {
                 string fileNumber = txtDocket.Text.Trim();
@@ -95,6 +95,8 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                     if (sqlQuery == "")
                     {
                         MessageBox.Show("Empleado guardado correctamente");
+                        viewList();
+                        clear();
                     }
                     else
                     {
@@ -105,7 +107,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                 {
                     MessageBox.Show($"Por favor ingrese correctamente los siguientes campos:\n{valid}");
                 }
-
+                modify = false;
             }
             else
             {
@@ -135,26 +137,89 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                     if (sqlQuery == "")
                     {
                         MessageBox.Show("Empleado moficado correctamente");
+                        viewList();
+                        clear();
                     }
                     else
                     {
                         MessageBox.Show(sqlQuery);
                     }
+                    modify = false;
                 }
                 else
                 {
                     MessageBox.Show($"Por favor ingrese correctamente los siguientes campos:\n{valid}");
                 }
-
-
-                modify = false;
             }
-            tblEmployee.DataSource = new SqlServer().searchRow(typeof(Employee), "dbo.employee", "1=1");
+        }
+        private void tblEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = tblEmployee.Rows[e.RowIndex];
 
+                fileNumber = row.Cells[0].Value.ToString();
+                dateAdmision = row.Cells[1].Value.ToString();
+                name = row.Cells[2].Value.ToString();
+                lastName = row.Cells[3].Value.ToString();
+                phoneNumber = row.Cells[4].Value.ToString();
+                email = row.Cells[5].Value.ToString();
+            }
 
         }
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            txtDocket.Text = fileNumber;
+            dateAdmission.Value = DateTime.Parse(dateAdmision);
+            txtName.Text = name;
+            txtLastName.Text = lastName;
+            txtPhone.Text = phoneNumber;
+            txtEmail.Text = email;
 
+            modify = true;
+        }
+        private void btnObservation_Click(object sender, EventArgs e)
+        {
+            if (fileNumber != "")
+            {
+                frmObservation frmObservation = new Frm.frmObservation(fileNumber);
+                frmObservation.Show();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un empleado");
+            }
+        }
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            SqlServer sql = new SqlServer();
+
+            string sqlQuery = sql.deleteRow("dbo.employee", $"file_number={int.Parse(fileNumber)};");
+
+            if (sqlQuery == "")
+            {
+                MessageBox.Show("Empleado eliminado correctamente");
+                viewList();
+            }
+            else
+            {
+                MessageBox.Show(sqlQuery);
+            }
+        }
+        private void clear()
+        {
+            fileNumber = "";
+            dateAdmision = "";
+            name = "";
+            lastName = "";
+            phoneNumber = "";
+            email = "";
+        }
+        private void viewList()
+        {
+            tblEmployee.DataSource = new SqlServer().searchRow(typeof(Employee), "dbo.employee", "1=1");
+        }
         private string validation(string fileNumber, string firstName, string lastName, string phone, string email)
         {
             Validation valid = new Validation();
@@ -167,75 +232,22 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
 
             return errors;
         }
-
-        private void viewList()
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-            tblEmployee.DataSource = new SqlServer().searchRow(typeof(Employee), "dbo.employee", "1=1");
+            tblEmployee.DataSource = new SqlServer().searchRow(
+                typeof(Employee),
+                "dbo.employee",
+                $"first_name LIKE '%{txtSearch.Text.Trim()}%'"
+                );
         }
-
-        private void tblEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-           
-        }
-
-        private void btnModify_Click(object sender, EventArgs e)
-        {
-            txtDocket.Text = docket;
-            dateAdmission.Value = DateTime.Parse(dateAdmision);
-            txtName.Text = name;
-            txtLastName.Text = lastName;
-            txtPhone.Text = phoneNumber;
-            txtEmail.Text = email;
-
-            modify = true;
-        }
-
-        private void btnObservation_Click(object sender, EventArgs e)
-        {
-            Frm.frmObservation frmObservation = new Frm.frmObservation();
-
-            frmObservation.Show();
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            SqlServer sql = new SqlServer();
-
-            string sqlQuery = sql.deleteRow("dbo.employee", $"file_number={int.Parse(docket)};");
-
-            if (sqlQuery == "")
-            {
-                MessageBox.Show("Empleado eliminado correctamente");
-                viewList();
-            }
-            else
-            {
-                MessageBox.Show(sqlQuery);
-            }
-        }
-
         private void btnNewEmployee_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void tblEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = tblEmployee.Rows[e.RowIndex];
-
-                docket = row.Cells[0].Value.ToString();
-                dateAdmision = row.Cells[1].Value.ToString();
-                name = row.Cells[2].Value.ToString();
-                lastName = row.Cells[3].Value.ToString();
-                phoneNumber = row.Cells[4].Value.ToString();
-                email = row.Cells[5].Value.ToString();
-            }
-
-      
+            txtDocket.Text = "";
+            txtName.Text = "";
+            txtLastName.Text = "";
+            txtPhone.Text = "";
+            txtEmail.Text = "";
+            modify = false;
         }
     }
 }

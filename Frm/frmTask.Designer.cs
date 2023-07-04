@@ -50,6 +50,7 @@
             label7 = new Label();
             label8 = new Label();
             btnAddEmployee = new Button();
+            cbxActive = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)tblTask).BeginInit();
             SuspendLayout();
             // 
@@ -250,12 +251,25 @@
             btnAddEmployee.Text = "Añadir Personal";
             btnAddEmployee.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnAddEmployee.UseVisualStyleBackColor = true;
+            btnAddEmployee.Click += BtnAddEmployee_Click;
+            // 
+            // cbxActive
+            // 
+            cbxActive.AutoSize = true;
+            cbxActive.Location = new Point(17, 94);
+            cbxActive.Name = "cbxActive";
+            cbxActive.Size = new Size(79, 19);
+            cbxActive.TabIndex = 27;
+            cbxActive.Text = "Finalizado";
+            cbxActive.UseVisualStyleBackColor = true;
+            cbxActive.Click += CbxActive_Click;
             // 
             // frmTask
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(655, 412);
+            Controls.Add(cbxActive);
             Controls.Add(btnAddEmployee);
             Controls.Add(label8);
             Controls.Add(label7);
@@ -309,5 +323,6 @@
         private Label label7;
         private Label label8;
         private Button btnAddEmployee;
+        private CheckBox cbxActive;
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace PROGRAMACION_3_TP_FINAL.Frm
+﻿using PROGRAMACION_3_TP_FINAL.DataBaseServices;
+
+namespace PROGRAMACION_3_TP_FINAL.Frm
 {
     partial class frmObservation
     {
@@ -36,6 +38,8 @@
             btnModify = new Button();
             btnDelete = new Button();
             btnSave = new Button();
+            dateObservation = new DateTimePicker();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)tblObsservation).BeginInit();
             SuspendLayout();
             // 
@@ -80,6 +84,7 @@
             tblObsservation.RowTemplate.Height = 25;
             tblObsservation.Size = new Size(716, 152);
             tblObsservation.TabIndex = 4;
+            tblObsservation.CellClick += TblObsservation_CellClick;
             // 
             // btnModify
             // 
@@ -91,6 +96,7 @@
             btnModify.Text = "Modificar";
             btnModify.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnModify.UseVisualStyleBackColor = true;
+            btnModify.Click += BtnModify_Click;
             // 
             // btnDelete
             // 
@@ -102,6 +108,7 @@
             btnDelete.Text = "Eliminar";
             btnDelete.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += BtnDelete_Click;
             // 
             // btnSave
             // 
@@ -113,13 +120,32 @@
             btnSave.Text = "Guardar";
             btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSave.UseVisualStyleBackColor = true;
-            btnSave.Click += btnSave_Click;
+            btnSave.Click += BtnSave_Click;
+            // 
+            // dateObservation
+            // 
+            dateObservation.Format = DateTimePickerFormat.Short;
+            dateObservation.Location = new Point(12, 113);
+            dateObservation.Name = "dateObservation";
+            dateObservation.Size = new Size(139, 23);
+            dateObservation.TabIndex = 8;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 95);
+            label3.Name = "label3";
+            label3.Size = new Size(38, 15);
+            label3.TabIndex = 9;
+            label3.Text = "Fecha";
             // 
             // frmObservation
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(744, 364);
+            Controls.Add(label3);
+            Controls.Add(dateObservation);
             Controls.Add(btnSave);
             Controls.Add(btnDelete);
             Controls.Add(btnModify);
@@ -145,5 +171,7 @@
         private Button btnModify;
         private Button btnDelete;
         private Button btnSave;
+        private DateTimePicker dateObservation;
+        private Label label3;
     }
 }

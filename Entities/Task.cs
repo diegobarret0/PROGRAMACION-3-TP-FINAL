@@ -16,8 +16,9 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
         private int actualHours;
         private decimal actualCost;
         private DateTime endDate;
+        private int isActive;
 
-        public Task(int projectId, string description, int estimatedHours, decimal estimatedCost, int actualHours, decimal actualCost, DateTime endDate)
+        public Task(int projectId, string description, int estimatedHours, decimal estimatedCost, int actualHours, decimal actualCost, DateTime endDate, int isActive)
         {
             proyect_id = projectId;
             description_ = description;
@@ -26,6 +27,7 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
             actual_hours = actualHours;
             actual_cost = actualCost;
             end_date = endDate;
+            active = isActive;
         }
         public Task() { }
 
@@ -68,6 +70,23 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
         {
             get { return endDate; }
             set { endDate = value; }
+        }
+        public int active
+        {
+            get { return isActive; }
+            set { isActive = value; }
+        }
+        public override string ToString()
+        {
+            return $"Task ID: {id}\n" +
+                   $"Project ID: {proyect_id}\n" +
+                   $"Description: {description_}\n" +
+                   $"Estimated Hours: {estimated_hours}\n" +
+                   $"Estimated Cost: {estimated_cost}\n" +
+                   $"Actual Hours: {actual_hours}\n" +
+                   $"Actual Cost: {actual_cost}\n" +
+                   $"End Date: {end_date}\n" +
+                   $"Active: {active}";
         }
     }
 }

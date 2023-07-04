@@ -47,6 +47,8 @@
             btnModify = new Button();
             btnNewEmployee = new Button();
             btnObservation = new Button();
+            txtSearch = new TextBox();
+            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)tblEmployee).BeginInit();
             SuspendLayout();
             // 
@@ -73,14 +75,14 @@
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(12, 104);
+            txtPhone.Location = new Point(12, 123);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(238, 23);
             txtPhone.TabIndex = 4;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(296, 104);
+            txtEmail.Location = new Point(296, 123);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(238, 23);
             txtEmail.TabIndex = 5;
@@ -88,7 +90,7 @@
             // dateAdmission
             // 
             dateAdmission.Format = DateTimePickerFormat.Short;
-            dateAdmission.Location = new Point(567, 104);
+            dateAdmission.Location = new Point(567, 123);
             dateAdmission.Name = "dateAdmission";
             dateAdmission.Size = new Size(139, 23);
             dateAdmission.TabIndex = 6;
@@ -103,7 +105,6 @@
             tblEmployee.Size = new Size(694, 173);
             tblEmployee.TabIndex = 7;
             tblEmployee.CellClick += tblEmployee_CellClick;
-            tblEmployee.CellContentClick += tblEmployee_CellContentClick;
             // 
             // label1
             // 
@@ -135,7 +136,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 86);
+            label4.Location = new Point(12, 104);
             label4.Name = "label4";
             label4.Size = new Size(44, 15);
             label4.TabIndex = 11;
@@ -144,7 +145,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(296, 86);
+            label5.Location = new Point(296, 104);
             label5.Name = "label5";
             label5.Size = new Size(36, 15);
             label5.TabIndex = 12;
@@ -153,7 +154,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(567, 86);
+            label6.Location = new Point(567, 104);
             label6.Name = "label6";
             label6.Size = new Size(96, 15);
             label6.TabIndex = 13;
@@ -161,19 +162,19 @@
             // 
             // btnSearch
             // 
-            btnSearch.Image = Properties.Resources.search_engine_optimization;
-            btnSearch.Location = new Point(12, 152);
+            btnSearch.Location = new Point(157, 169);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(95, 30);
+            btnSearch.Size = new Size(59, 25);
             btnSearch.TabIndex = 14;
             btnSearch.Text = "Buscar";
             btnSearch.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // btnSave
             // 
             btnSave.Image = Properties.Resources.guardar_el_archivo;
-            btnSave.Location = new Point(533, 152);
+            btnSave.Location = new Point(533, 164);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(85, 30);
             btnSave.TabIndex = 15;
@@ -185,7 +186,7 @@
             // btnDelete
             // 
             btnDelete.Image = Properties.Resources.borrar;
-            btnDelete.Location = new Point(624, 152);
+            btnDelete.Location = new Point(624, 164);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(82, 30);
             btnDelete.TabIndex = 16;
@@ -197,7 +198,7 @@
             // btnModify
             // 
             btnModify.Image = Properties.Resources.dibujo;
-            btnModify.Location = new Point(434, 152);
+            btnModify.Location = new Point(434, 164);
             btnModify.Name = "btnModify";
             btnModify.Size = new Size(93, 30);
             btnModify.TabIndex = 17;
@@ -209,7 +210,7 @@
             // btnNewEmployee
             // 
             btnNewEmployee.Image = Properties.Resources.agregar_usuario;
-            btnNewEmployee.Location = new Point(115, 152);
+            btnNewEmployee.Location = new Point(16, 71);
             btnNewEmployee.Name = "btnNewEmployee";
             btnNewEmployee.Size = new Size(135, 30);
             btnNewEmployee.TabIndex = 18;
@@ -221,7 +222,7 @@
             // btnObservation
             // 
             btnObservation.Image = Properties.Resources.agregar_contacto;
-            btnObservation.Location = new Point(265, 152);
+            btnObservation.Location = new Point(274, 164);
             btnObservation.Name = "btnObservation";
             btnObservation.Size = new Size(154, 30);
             btnObservation.TabIndex = 19;
@@ -230,11 +231,29 @@
             btnObservation.UseVisualStyleBackColor = true;
             btnObservation.Click += btnObservation_Click;
             // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(12, 171);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(139, 23);
+            txtSearch.TabIndex = 20;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(12, 153);
+            label7.Name = "label7";
+            label7.Size = new Size(37, 15);
+            label7.TabIndex = 21;
+            label7.Text = "Filtrar";
+            // 
             // frmEmployee
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(720, 388);
+            Controls.Add(label7);
+            Controls.Add(txtSearch);
             Controls.Add(btnObservation);
             Controls.Add(btnNewEmployee);
             Controls.Add(btnModify);
@@ -282,5 +301,7 @@
         private Button btnModify;
         private Button btnNewEmployee;
         private Button btnObservation;
+        private TextBox txtSearch;
+        private Label label7;
     }
 }
