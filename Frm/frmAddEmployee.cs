@@ -146,7 +146,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
         {
             List<WorkDataGreedView> myList = new List<WorkDataGreedView>();
 
-            foreach (Work work in workList) 
+            foreach (Work work in workList)
             {
                 WorkDataGreedView myWorkDGW = new WorkDataGreedView();
                 SqlServer sql = new SqlServer();
@@ -178,7 +178,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
 
             foreach (Work work in workList)
             {
-                if(idFunction == work.function_id)
+                if (idFunction == work.function_id)
                 {
                     return true;
                 }
