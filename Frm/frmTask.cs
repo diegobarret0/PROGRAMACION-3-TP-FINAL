@@ -26,6 +26,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
         private string actualCost;
         private DateTime endDate;
         private string isActive = "0";
+
         public frmTask(string projectId)
         {
             InitializeComponent();
@@ -135,6 +136,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                         txtEstimatedCost.Text = "";
                         txtRealHours.Text = "";
                         txtRealCost.Text = "";
+                        idTask = "";
                         cbxActive.Checked = false;
                         modify = false;
                     }
@@ -187,6 +189,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                         txtEstimatedCost.Text = "";
                         txtRealHours.Text = "";
                         txtRealCost.Text = "";
+                        idTask = "";
                         cbxActive.Checked = false;
                         modify = false;
                     }
@@ -256,6 +259,18 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
             {
                 cbxActive.Checked = false;
                 MessageBox.Show("Seccione para modificar la tarea");
+            }
+        }
+        private void BtnAddEmployee_Click(object sender, EventArgs e)
+        {
+            if (idTask != "")
+            {
+                frmAddEmployee frmAddEmployee = new frmAddEmployee(idTask, projectId, description);
+                frmAddEmployee.Show();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una tarea");
             }
         }
         private string validation(string description, string estimatedHours, string estimatedCost, string actualHours, string actualCost)

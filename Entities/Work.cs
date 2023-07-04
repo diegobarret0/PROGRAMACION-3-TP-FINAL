@@ -42,5 +42,9 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
             get { return functionId; }
             set { functionId = value; }
         }
+        public override string ToString()
+        {
+            return $"Employee File: {employeeFile}, Project ID: {projectId}, Task ID: {taskId}, Function ID: {functionId}";
+        }
     }
 }

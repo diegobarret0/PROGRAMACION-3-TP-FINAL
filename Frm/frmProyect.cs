@@ -30,6 +30,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
             InitializeComponent();
             txtId.Enabled = false;
             cbxActive.Enabled = false;
+            txtFilter.PlaceholderText = "Legajo";
 
             DataGridViewColumn idColumn = new DataGridViewTextBoxColumn();
             idColumn.HeaderText = "ID";
@@ -73,6 +74,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
 
             tblProyect.DataSource = new SqlServer().searchRow(typeof(Project), "dbo.project", "1=1");
         }
+
         private void Propietario_Click(object sender, EventArgs e)
         {
             Frm.frmOwner frmOwner = new frmOwner();
@@ -103,6 +105,11 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                 Proprietor myPro = (Proprietor)cmbOwner.SelectedItem;
                 proprietorId = myPro.id.ToString();
                 if (cbxActive.Checked) isActive = "1";
+                if (validateNumberOfProjects(int.Parse(leaderFile)))
+                {
+                    MessageBox.Show($"El empleado {leaderFile} no puede ser lider de mas de 3 proyectos.");
+                    return;
+                }
                 string valid = validation(leaderFile, projectName, estimatedAmount, estimatedTime);
 
                 if (valid == "")
@@ -129,12 +136,12 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                         textBox6.Text = "";
                         txtId.Text = "";
                         cbxActive.Checked = false;
-                        modify = false;
                     }
                     else
                     {
                         MessageBox.Show(sqlQuery);
                     }
+                    modify = false;
                 }
                 else
                 {
@@ -176,13 +183,13 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                         textBox1.Text = "";
                         textBox6.Text = "";
                         txtId.Text = "";
-                        modify = false;
                         cbxActive.Checked = false;
                     }
                     else
                     {
                         MessageBox.Show(sqlQuery);
                     }
+                    modify = false;
                 }
                 else
                 {
@@ -203,7 +210,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                 estimatedTime = row.Cells[3].Value.ToString();
                 proprietorId = row.Cells[4].Value.ToString();
                 leaderFile = row.Cells[5].Value.ToString();
-                _ = (row.Cells[6].Value.ToString() == "1") ? isActive = "1": isActive = "0";
+                _ = (row.Cells[6].Value.ToString() == "1") ? isActive = "1" : isActive = "0";
             }
         }
         private void BtnModify_Click(object sender, EventArgs e)
@@ -217,7 +224,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
             List<object> list = new SqlServer().searchRow(typeof(Proprietor), "dbo.proprietor", $"id={proprietorId}");
             myProprietor = (Proprietor)list[0];
             cmbOwner.Text = myProprietor.company_name;
-            _=(isActive == "1") ? cbxActive.Checked = true : cbxActive.Checked = false;
+            _ = (isActive == "1") ? cbxActive.Checked = true : cbxActive.Checked = false;
 
             modify = true;
         }
@@ -247,6 +254,41 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                 MessageBox.Show($"Error al eliminar Proyecto:\n{sqlQuery}");
             }
             tblProyect.DataSource = new SqlServer().searchRow(typeof(Project), "dbo.project", "1=1");
+        }
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            tblProyect.DataSource = new SqlServer().searchRow(
+                typeof(Project),
+                "dbo.project",
+                $"leader_file LIKE '%{txtFilter.Text.Trim()}%'"
+                );
+        }
+        private bool validateNumberOfProjects(int leaderFile)
+        {
+            List<object> proyectList = new SqlServer().searchRow(typeof(Project), "dbo.project", "1=1;");
+            int numberOfProjects = 0;
+
+            foreach (Project project in proyectList)
+            {
+                if (leaderFile == project.leader_file)
+                {
+                    ++numberOfProjects;
+                    MessageBox.Show(numberOfProjects.ToString());
+                    if (numberOfProjects >= 3) return true;
+                }
+            }
+
+            return false;
+        }
+        private void btnNewProyect_Click(object sender, EventArgs e)
+        {
+            txtDocket.Text = "";
+            txtNameProyect.Text = "";
+            txtId.Text = "";
+            textBox1.Text = "";
+            textBox6.Text = "";
+            cbxActive.Checked = false;
+            modify = false;
         }
     }
 }

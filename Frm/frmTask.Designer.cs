@@ -252,6 +252,7 @@
             btnAddEmployee.Text = "Añadir Personal";
             btnAddEmployee.TextImageRelation = TextImageRelation.ImageAboveText;
             btnAddEmployee.UseVisualStyleBackColor = true;
+            btnAddEmployee.Click += BtnAddEmployee_Click;
             // 
             // cbxActive
             // 
@@ -297,7 +298,7 @@
             ((System.ComponentModel.ISupportInitialize)tblTask).EndInit();
             ResumeLayout(false);
             PerformLayout();
-        }        
+        }
 
         #endregion
 
