@@ -14,14 +14,16 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
         private int estimatedTime;
         private int proprietorId;
         private int leaderFile;
+        private int isActive;
 
-        public Project(string name, decimal estimatedAmount, int estimatedTime, int proprietorId, int leaderFile)
+        public Project(string name, decimal estimatedAmount, int estimatedTime, int proprietorId, int leaderFile, int isActive)
         {
             name_ = name;
             estimated_amount = estimatedAmount;
             estimated_time = estimatedTime;
             proprietor_id = proprietorId;
             leader_file = leaderFile;
+            active = isActive;
         }
         public Project() { }
 
@@ -54,6 +56,11 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
         {
             get { return leaderFile; }
             set { leaderFile = value; }
+        }
+        public int active
+        {
+            get { return isActive; }
+            set { isActive = value; }
         }
     }
 }

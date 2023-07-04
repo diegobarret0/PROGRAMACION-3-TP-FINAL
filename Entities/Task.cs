@@ -76,5 +76,17 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
             get { return isActive; }
             set { isActive = value; }
         }
+        public override string ToString()
+        {
+            return $"Task ID: {id}\n" +
+                   $"Project ID: {proyect_id}\n" +
+                   $"Description: {description_}\n" +
+                   $"Estimated Hours: {estimated_hours}\n" +
+                   $"Estimated Cost: {estimated_cost}\n" +
+                   $"Actual Hours: {actual_hours}\n" +
+                   $"Actual Cost: {actual_cost}\n" +
+                   $"End Date: {end_date}\n" +
+                   $"Active: {active}";
+        }
     }
 }

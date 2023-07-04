@@ -24,11 +24,12 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
         private string estimatedTime;
         private string proprietorId;
         private string leaderFile;
+        private string isActive = "0";
         public frmProyect()
         {
             InitializeComponent();
             txtId.Enabled = false;
-            cbxIsActive.Enabled = false;
+            cbxActive.Enabled = false;
 
             DataGridViewColumn idColumn = new DataGridViewTextBoxColumn();
             idColumn.HeaderText = "ID";
@@ -43,7 +44,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
             estimatedAmountColumn.DataPropertyName = "estimated_amount";
 
             DataGridViewColumn estimatedCostColumn = new DataGridViewTextBoxColumn();
-            estimatedCostColumn.HeaderText = "Costo estimado";
+            estimatedCostColumn.HeaderText = "Tiempo estimado";
             estimatedCostColumn.DataPropertyName = "estimated_time";
 
             //Sacar nombre de propietario
@@ -55,12 +56,17 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
             leaderColumn.HeaderText = "Lider del proyecto";
             leaderColumn.DataPropertyName = "leader_file";
 
+            DataGridViewColumn isActiveColumn = new DataGridViewTextBoxColumn();
+            isActiveColumn.HeaderText = "En progreso";
+            isActiveColumn.DataPropertyName = "active";
+
             tblProyect.Columns.Add(idColumn);
             tblProyect.Columns.Add(nameColumn);
             tblProyect.Columns.Add(estimatedAmountColumn);
             tblProyect.Columns.Add(estimatedCostColumn);
             tblProyect.Columns.Add(proprietorColumn);
             tblProyect.Columns.Add(leaderColumn);
+            tblProyect.Columns.Add(isActiveColumn);
 
             cmbOwner.DataSource = new SqlServer().searchRow(typeof(Proprietor), "dbo.proprietor", "1=1");
             cmbOwner.DisplayMember = "company_name";
@@ -70,7 +76,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
         private void Propietario_Click(object sender, EventArgs e)
         {
             Frm.frmOwner frmOwner = new frmOwner();
-
+            this.Close();
             frmOwner.Show();
         }
         private void btnTask_Click(object sender, EventArgs e)
@@ -82,6 +88,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
             else
             {
                 Frm.frmTask frmTask = new frmTask(id);
+                this.Close();
                 frmTask.Show();
             }
         }
@@ -89,13 +96,13 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
         {
             if (!modify)
             {
-
                 leaderFile = txtDocket.Text.Trim();
                 projectName = txtNameProyect.Text.Trim();
                 estimatedAmount = textBox1.Text.Trim();
                 estimatedTime = textBox6.Text.Trim();
                 Proprietor myPro = (Proprietor)cmbOwner.SelectedItem;
                 proprietorId = myPro.id.ToString();
+                if (cbxActive.Checked) isActive = "1";
                 string valid = validation(leaderFile, projectName, estimatedAmount, estimatedTime);
 
                 if (valid == "")
@@ -105,7 +112,8 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                     decimal.Parse(estimatedAmount),
                     int.Parse(estimatedTime),
                     int.Parse(proprietorId),
-                    int.Parse(leaderFile)
+                    int.Parse(leaderFile),
+                    int.Parse(isActive)
                     );
 
                     SqlServer sql = new SqlServer();
@@ -120,6 +128,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                         textBox1.Text = "";
                         textBox6.Text = "";
                         txtId.Text = "";
+                        cbxActive.Checked = false;
                         modify = false;
                     }
                     else
@@ -141,6 +150,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                 estimatedTime = textBox6.Text.Trim();
                 Proprietor myPro = (Proprietor)cmbOwner.SelectedItem;
                 proprietorId = myPro.id.ToString();
+                if (cbxActive.Checked) isActive = "1";
                 string valid = validation(leaderFile, projectName, estimatedAmount, estimatedTime);
 
                 if (valid == "")
@@ -150,7 +160,8 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                     decimal.Parse(estimatedAmount),
                     int.Parse(estimatedTime),
                     int.Parse(proprietorId),
-                    int.Parse(leaderFile)
+                    int.Parse(leaderFile),
+                    int.Parse(isActive)
                     );
 
                     SqlServer sql = new SqlServer();
@@ -166,6 +177,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                         textBox6.Text = "";
                         txtId.Text = "";
                         modify = false;
+                        cbxActive.Checked = false;
                     }
                     else
                     {
@@ -191,6 +203,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                 estimatedTime = row.Cells[3].Value.ToString();
                 proprietorId = row.Cells[4].Value.ToString();
                 leaderFile = row.Cells[5].Value.ToString();
+                _ = (row.Cells[6].Value.ToString() == "1") ? isActive = "1": isActive = "0";
             }
         }
         private void BtnModify_Click(object sender, EventArgs e)
@@ -200,11 +213,11 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
             textBox1.Text = estimatedAmount;
             textBox6.Text = estimatedTime;
             txtDocket.Text = leaderFile;
-            //cmbOwner.Text = proprietorId;
             Proprietor myProprietor = new Proprietor();
             List<object> list = new SqlServer().searchRow(typeof(Proprietor), "dbo.proprietor", $"id={proprietorId}");
             myProprietor = (Proprietor)list[0];
             cmbOwner.Text = myProprietor.company_name;
+            _=(isActive == "1") ? cbxActive.Checked = true : cbxActive.Checked = false;
 
             modify = true;
         }

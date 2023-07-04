@@ -51,7 +51,7 @@
             cmbOwner = new ComboBox();
             proprietorBindingSource = new BindingSource(components);
             proprietorBindingSource1 = new BindingSource(components);
-            cbxIsActive = new CheckBox();
+            cbxActive = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)tblProyect).BeginInit();
             ((System.ComponentModel.ISupportInitialize)proprietorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)proprietorBindingSource1).BeginInit();
@@ -246,22 +246,22 @@
             cmbOwner.Size = new Size(150, 23);
             cmbOwner.TabIndex = 20;
             // 
-            // cbxIsActive
+            // cbxActive
             // 
-            cbxIsActive.AutoSize = true;
-            cbxIsActive.Location = new Point(377, 154);
-            cbxIsActive.Name = "cbxIsActive";
-            cbxIsActive.Size = new Size(79, 19);
-            cbxIsActive.TabIndex = 21;
-            cbxIsActive.Text = "Finalizado";
-            cbxIsActive.UseVisualStyleBackColor = true;
+            cbxActive.AutoSize = true;
+            cbxActive.Location = new Point(377, 154);
+            cbxActive.Name = "cbxActive";
+            cbxActive.Size = new Size(79, 19);
+            cbxActive.TabIndex = 21;
+            cbxActive.Text = "Finalizado";
+            cbxActive.UseVisualStyleBackColor = true;
             // 
             // frmProyect
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(662, 450);
-            Controls.Add(cbxIsActive);
+            Controls.Add(cbxActive);
             Controls.Add(cmbOwner);
             Controls.Add(btnAddOwner);
             Controls.Add(btnTask);
@@ -315,6 +315,6 @@
         private ComboBox cmbOwner;
         private BindingSource proprietorBindingSource;
         private BindingSource proprietorBindingSource1;
-        private CheckBox cbxIsActive;
+        private CheckBox cbxActive;
     }
 }
