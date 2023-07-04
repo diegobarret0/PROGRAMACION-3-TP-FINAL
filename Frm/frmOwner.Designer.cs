@@ -189,6 +189,7 @@
             tblOwner.Size = new Size(650, 150);
             tblOwner.TabIndex = 15;
             tblOwner.CellClick += TblOwner_CellClick;
+            tblOwner.CellContentClick += tblOwner_CellContentClick;
             // 
             // frmOwner
             // 

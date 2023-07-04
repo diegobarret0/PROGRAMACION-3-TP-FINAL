@@ -102,6 +102,7 @@
             tblEmployee.RowTemplate.Height = 25;
             tblEmployee.Size = new Size(694, 173);
             tblEmployee.TabIndex = 7;
+            tblEmployee.CellClick += tblEmployee_CellClick;
             tblEmployee.CellContentClick += tblEmployee_CellContentClick;
             // 
             // label1
