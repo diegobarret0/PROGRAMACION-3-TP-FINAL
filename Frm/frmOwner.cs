@@ -213,5 +213,10 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
             }
             tblOwner.DataSource = new SqlServer().searchRow(typeof(Proprietor), "dbo.proprietor", "1=1");
         }
+
+        private void tblOwner_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

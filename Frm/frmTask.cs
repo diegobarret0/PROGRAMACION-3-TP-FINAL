@@ -124,7 +124,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                     }
 
                     string isFinished = hoursAndCostValidations.isFinished(int.Parse(projectId));
-                    if(isFinished != "") MessageBox.Show(isFinished);
+                    if (isFinished != "") MessageBox.Show(isFinished);
 
                     string sqlQuery = sql.insertRow(myTask, "dbo.task");
 
@@ -230,7 +230,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                 actualHours = row.Cells[5].Value.ToString();
                 actualCost = row.Cells[6].Value.ToString();
                 endDate = DateTime.Parse(row.Cells[7].Value.ToString());
-                _=(row.Cells[8].Value.ToString() == "1") ? isActive = "1" : isActive = "0";
+                _ = (row.Cells[8].Value.ToString() == "1") ? isActive = "1" : isActive = "0";
             }
         }
         private void BtnDelete_Click(object sender, EventArgs e)
@@ -250,10 +250,10 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
         }
         private void CbxActive_Click(object sender, EventArgs e)
         {
-            if(idTask != "" && modify)
+            if (idTask != "" && modify)
             {
-                if(cbxActive.Checked == false) MessageBox.Show($"Tarea marcada como en progreso id:{idTask}");
-                if(cbxActive.Checked == true) MessageBox.Show($"Tarea marcada como finalizada id:{idTask}");
+                if (cbxActive.Checked == false) MessageBox.Show($"Tarea marcada como en progreso id:{idTask}");
+                if (cbxActive.Checked == true) MessageBox.Show($"Tarea marcada como finalizada id:{idTask}");
             }
             else
             {

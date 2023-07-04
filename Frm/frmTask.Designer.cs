@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtTaskNumber = new TextBox();
             txtEstimatedHours = new TextBox();
             txtDescription = new TextBox();
             txtRealCost = new TextBox();
@@ -42,7 +41,6 @@
             btnSave = new Button();
             btnDelete = new Button();
             label1 = new Label();
-            label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -54,16 +52,9 @@
             ((System.ComponentModel.ISupportInitialize)tblTask).BeginInit();
             SuspendLayout();
             // 
-            // txtTaskNumber
-            // 
-            txtTaskNumber.Location = new Point(183, 35);
-            txtTaskNumber.Name = "txtTaskNumber";
-            txtTaskNumber.Size = new Size(127, 23);
-            txtTaskNumber.TabIndex = 0;
-            // 
             // txtEstimatedHours
             // 
-            txtEstimatedHours.Location = new Point(346, 35);
+            txtEstimatedHours.Location = new Point(183, 35);
             txtEstimatedHours.Name = "txtEstimatedHours";
             txtEstimatedHours.Size = new Size(127, 23);
             txtEstimatedHours.TabIndex = 1;
@@ -86,7 +77,7 @@
             // 
             // txtEstimatedCost
             // 
-            txtEstimatedCost.Location = new Point(513, 35);
+            txtEstimatedCost.Location = new Point(346, 35);
             txtEstimatedCost.Name = "txtEstimatedCost";
             txtEstimatedCost.Size = new Size(127, 23);
             txtEstimatedCost.TabIndex = 4;
@@ -100,7 +91,7 @@
             // 
             // dateFinal
             // 
-            dateFinal.Location = new Point(513, 94);
+            dateFinal.Location = new Point(513, 70);
             dateFinal.Name = "dateFinal";
             dateFinal.Size = new Size(127, 23);
             dateFinal.TabIndex = 7;
@@ -174,23 +165,14 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 17);
             label1.Name = "label1";
-            label1.Size = new Size(18, 15);
+            label1.Size = new Size(48, 15);
             label1.TabIndex = 15;
-            label1.Text = "ID";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(183, 17);
-            label2.Name = "label2";
-            label2.Size = new Size(97, 15);
-            label2.TabIndex = 16;
-            label2.Text = "Numero de Tarea";
+            label1.Text = "ID Tarea";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(346, 17);
+            label3.Location = new Point(183, 17);
             label3.Name = "label3";
             label3.Size = new Size(94, 15);
             label3.TabIndex = 17;
@@ -199,7 +181,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(513, 17);
+            label4.Location = new Point(346, 17);
             label4.Name = "label4";
             label4.Size = new Size(90, 15);
             label4.TabIndex = 18;
@@ -226,7 +208,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(513, 76);
+            label7.Location = new Point(513, 52);
             label7.Name = "label7";
             label7.Size = new Size(66, 15);
             label7.TabIndex = 21;
@@ -250,7 +232,7 @@
             btnAddEmployee.Size = new Size(127, 33);
             btnAddEmployee.TabIndex = 24;
             btnAddEmployee.Text = "Añadir Personal";
-            btnAddEmployee.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnAddEmployee.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnAddEmployee.UseVisualStyleBackColor = true;
             btnAddEmployee.Click += BtnAddEmployee_Click;
             // 
@@ -278,7 +260,6 @@
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnDelete);
             Controls.Add(btnSave);
@@ -292,7 +273,6 @@
             Controls.Add(txtRealCost);
             Controls.Add(txtDescription);
             Controls.Add(txtEstimatedHours);
-            Controls.Add(txtTaskNumber);
             Name = "frmTask";
             Text = "frmTask";
             ((System.ComponentModel.ISupportInitialize)tblTask).EndInit();
@@ -301,8 +281,6 @@
         }
 
         #endregion
-
-        private TextBox txtTaskNumber;
         private TextBox txtEstimatedHours;
         private TextBox txtDescription;
         private TextBox txtRealCost;
@@ -316,7 +294,6 @@
         private Button btnSave;
         private Button btnDelete;
         private Label label1;
-        private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;

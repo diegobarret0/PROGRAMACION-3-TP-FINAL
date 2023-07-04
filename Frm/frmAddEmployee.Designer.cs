@@ -113,6 +113,7 @@
             // 
             // tblEmployees
             // 
+            tblEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             tblEmployees.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tblEmployees.Location = new Point(12, 82);
             tblEmployees.Name = "tblEmployees";

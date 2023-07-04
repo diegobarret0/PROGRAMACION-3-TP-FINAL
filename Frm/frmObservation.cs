@@ -180,5 +180,10 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
         {
             tblObsservation.DataSource = new SqlServer().searchRow(typeof(Observation), "dbo.observations", $"employee_file={fileNumber}");
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
