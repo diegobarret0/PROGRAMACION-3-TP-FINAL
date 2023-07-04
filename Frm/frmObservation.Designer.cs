@@ -78,6 +78,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
             // 
             // tblObsservation
             // 
+            tblObsservation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             tblObsservation.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tblObsservation.Location = new Point(12, 197);
             tblObsservation.Name = "tblObsservation";
@@ -120,7 +121,6 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
             btnSave.Text = "Guardar";
             btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSave.UseVisualStyleBackColor = true;
-
             btnSave.Click += BtnSave_Click;
             // 
             // dateObservation

@@ -273,7 +273,6 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                 if (leaderFile == project.leader_file)
                 {
                     ++numberOfProjects;
-                    MessageBox.Show(numberOfProjects.ToString());
                     if (numberOfProjects >= 3) return true;
                 }
             }

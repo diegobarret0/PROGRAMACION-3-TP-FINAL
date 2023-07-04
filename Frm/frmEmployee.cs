@@ -28,7 +28,6 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
         public frmEmployee()
         {
             InitializeComponent();
-            txtDocket.Enabled = false;
             txtSearch.PlaceholderText = "Nombre";
 
             DataGridViewColumn docketColumn = new DataGridViewTextBoxColumn();
