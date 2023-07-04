@@ -11,9 +11,8 @@ namespace PROGRAMACION_3_TP_FINAL.Entities
         private int id_;
         private string description;
 
-        public EmployeeFunction(int id_, string description) 
+        public EmployeeFunction(string description) 
         {
-            id = id_;
             description_ = description;
         }
         public EmployeeFunction() { }

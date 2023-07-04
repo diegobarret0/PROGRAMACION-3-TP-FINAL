@@ -51,6 +51,9 @@
             cmbOwner = new ComboBox();
             proprietorBindingSource = new BindingSource(components);
             proprietorBindingSource1 = new BindingSource(components);
+            cbxActive = new CheckBox();
+            label7 = new Label();
+            txtFilter = new TextBox();
             ((System.ComponentModel.ISupportInitialize)tblProyect).BeginInit();
             ((System.ComponentModel.ISupportInitialize)proprietorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)proprietorBindingSource1).BeginInit();
@@ -158,13 +161,14 @@
             // btnNewProyect
             // 
             btnNewProyect.Image = Properties.Resources.proyecto;
-            btnNewProyect.Location = new Point(191, 192);
+            btnNewProyect.Location = new Point(232, 192);
             btnNewProyect.Name = "btnNewProyect";
-            btnNewProyect.Size = new Size(129, 33);
+            btnNewProyect.Size = new Size(126, 33);
             btnNewProyect.TabIndex = 13;
             btnNewProyect.Text = "Nuevo Proyecto\r\n";
             btnNewProyect.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnNewProyect.UseVisualStyleBackColor = true;
+            btnNewProyect.Click += btnNewProyect_Click;
             // 
             // btnModify
             // 
@@ -204,19 +208,19 @@
             // 
             // btnSearch
             // 
-            btnSearch.Image = Properties.Resources.search_engine_optimization;
-            btnSearch.Location = new Point(12, 192);
+            btnSearch.Location = new Point(144, 211);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(125, 33);
+            btnSearch.Size = new Size(72, 23);
             btnSearch.TabIndex = 17;
-            btnSearch.Text = "Buscar Proyecto";
+            btnSearch.Text = "Buscar";
             btnSearch.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += BtnSearch_Click;
             // 
             // btnTask
             // 
             btnTask.Image = Properties.Resources.agregar_archivo;
-            btnTask.Location = new Point(465, 145);
+            btnTask.Location = new Point(476, 147);
             btnTask.Name = "btnTask";
             btnTask.Size = new Size(75, 30);
             btnTask.TabIndex = 18;
@@ -245,11 +249,40 @@
             cmbOwner.Size = new Size(150, 23);
             cmbOwner.TabIndex = 20;
             // 
+            // cbxActive
+            // 
+            cbxActive.AutoSize = true;
+            cbxActive.Location = new Point(377, 154);
+            cbxActive.Name = "cbxActive";
+            cbxActive.Size = new Size(79, 19);
+            cbxActive.TabIndex = 21;
+            cbxActive.Text = "Finalizado";
+            cbxActive.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(12, 187);
+            label7.Name = "label7";
+            label7.Size = new Size(130, 15);
+            label7.TabIndex = 22;
+            label7.Text = "Filtrar por respondrable";
+            // 
+            // txtFilter
+            // 
+            txtFilter.Location = new Point(12, 211);
+            txtFilter.Name = "txtFilter";
+            txtFilter.Size = new Size(126, 23);
+            txtFilter.TabIndex = 23;
+            // 
             // frmProyect
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(662, 450);
+            Controls.Add(txtFilter);
+            Controls.Add(label7);
+            Controls.Add(cbxActive);
             Controls.Add(cmbOwner);
             Controls.Add(btnAddOwner);
             Controls.Add(btnTask);
@@ -303,5 +336,8 @@
         private ComboBox cmbOwner;
         private BindingSource proprietorBindingSource;
         private BindingSource proprietorBindingSource1;
+        private CheckBox cbxActive;
+        private Label label7;
+        private TextBox txtFilter;
     }
 }
