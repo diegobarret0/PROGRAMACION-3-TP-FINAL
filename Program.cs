@@ -1,3 +1,5 @@
+using PROGRAMACION_3_TP_FINAL.Services;
+
 namespace PROGRAMACION_3_TP_FINAL
 {
     internal static class Program
@@ -12,6 +14,8 @@ namespace PROGRAMACION_3_TP_FINAL
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+            //HoursAndCostValidation validations = new HoursAndCostValidation(1);
+            //MessageBox.Show(validations.validateHours().ToString());
         }
     }
 }

@@ -16,7 +16,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
 {
     public partial class frmTask : Form
     {
-        private string idTask;
+        private string idTask = "";
         private string projectId;
         private bool modify = false;
         private string description;
@@ -25,20 +25,22 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
         private string actualHours;
         private string actualCost;
         private DateTime endDate;
+        private string isActive = "0";
+
         public frmTask(string projectId)
         {
             InitializeComponent();
             this.projectId = projectId;
-
-            /*DataGridViewColumn idColumn = new DataGridViewTextBoxColumn();
-            idColumn.HeaderText = "ID";
-            idColumn.DataPropertyName = "id";*/
             txtTaskId.Enabled = false;
             txtTaskId.Text = this.projectId;
 
-            /*DataGridViewColumn idProyectColumn = new DataGridViewTextBoxColumn();
+            DataGridViewColumn idColumn = new DataGridViewTextBoxColumn();
+            idColumn.HeaderText = "ID";
+            idColumn.DataPropertyName = "id";
+
+            DataGridViewColumn idProyectColumn = new DataGridViewTextBoxColumn();
             idProyectColumn.HeaderText = "ID Proyecto";
-            idProyectColumn.DataPropertyName = "proyect_id";*/
+            idProyectColumn.DataPropertyName = "proyect_id";
 
             DataGridViewColumn descriptionColumn = new DataGridViewTextBoxColumn();
             descriptionColumn.HeaderText = "Descripcion";
@@ -64,6 +66,11 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
             endDateColumn.HeaderText = "Fecha final";
             endDateColumn.DataPropertyName = "end_date";
 
+            DataGridViewColumn isActiveColumn = new DataGridViewTextBoxColumn();
+            isActiveColumn.HeaderText = "En progreso";
+            isActiveColumn.DataPropertyName = "active";
+
+            //tblTask.Columns.Add(idColumn);
             //tblTask.Columns.Add(idProyectColumn);
             tblTask.Columns.Add(descriptionColumn);
             tblTask.Columns.Add(estimatedHoursColumn);
@@ -71,6 +78,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
             tblTask.Columns.Add(actualHoursColumn);
             tblTask.Columns.Add(actualCostColumn);
             tblTask.Columns.Add(endDateColumn);
+            tblTask.Columns.Add(isActiveColumn);
             tblTask.DataSource = new SqlServer().searchRow(typeof(Entities.Task), "dbo.task", $"proyect_id={projectId};");
         }
         private void BtnSave_Click(object sender, EventArgs e)
@@ -82,6 +90,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                 estimatedCost = txtEstimatedCost.Text.Trim();
                 actualHours = txtRealHours.Text.Trim();
                 actualCost = txtRealCost.Text.Trim();
+                _ = cbxActive.Checked ? isActive = "1" : isActive = "0";
                 string valid = validation(description, estimatedHours, estimatedCost, actualHours, actualCost);
 
                 if (valid == "")
@@ -93,10 +102,29 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                         decimal.Parse(estimatedCost),
                         int.Parse(actualHours),
                         decimal.Parse(actualCost),
-                        dateFinal.Value
+                        dateFinal.Value,
+                        int.Parse(isActive)
                     );
 
                     SqlServer sql = new SqlServer();
+
+                    HoursAndCostValidation hoursAndCostValidations = new HoursAndCostValidation();
+                    int hoursExtended = hoursAndCostValidations.validateHours(int.Parse(projectId), int.Parse(estimatedHours));
+
+                    if (hoursExtended != 0)
+                    {
+                        MessageBox.Show($"El tiempo estimado de finalizacion de proyecto se extendera a {hoursExtended}");
+                    }
+
+                    decimal costExtended = hoursAndCostValidations.valitateCost(int.Parse(projectId), decimal.Parse(estimatedCost));
+
+                    if (costExtended != 0)
+                    {
+                        MessageBox.Show($"El costo estimado del proyecto se extendera a {costExtended}");
+                    }
+
+                    string isFinished = hoursAndCostValidations.isFinished(int.Parse(projectId));
+                    if(isFinished != "") MessageBox.Show(isFinished);
 
                     string sqlQuery = sql.insertRow(myTask, "dbo.task");
 
@@ -108,6 +136,8 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                         txtEstimatedCost.Text = "";
                         txtRealHours.Text = "";
                         txtRealCost.Text = "";
+                        idTask = "";
+                        cbxActive.Checked = false;
                         modify = false;
                     }
                     else
@@ -128,6 +158,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                 estimatedCost = txtEstimatedCost.Text.Trim();
                 actualHours = txtRealHours.Text.Trim();
                 actualCost = txtRealCost.Text.Trim();
+                _ = cbxActive.Checked ? isActive = "1" : isActive = "0";
                 string valid = validation(description, estimatedHours, estimatedCost, actualHours, actualCost);
 
                 if (valid == "")
@@ -139,7 +170,8 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                         decimal.Parse(estimatedCost),
                         int.Parse(actualHours),
                         decimal.Parse(actualCost),
-                        dateFinal.Value
+                        dateFinal.Value,
+                        int.Parse(isActive)
                     );
 
                     SqlServer sql = new SqlServer();
@@ -148,12 +180,17 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
 
                     if (sqlQuery == "")
                     {
+                        HoursAndCostValidation hoursAndCostValidations = new HoursAndCostValidation();
+                        string isFinished = hoursAndCostValidations.isFinished(int.Parse(projectId));
+                        if (isFinished != "") MessageBox.Show(isFinished);
                         MessageBox.Show("Tarea modificada correctamente");
                         txtDescription.Text = "";
                         txtEstimatedHours.Text = "";
                         txtEstimatedCost.Text = "";
                         txtRealHours.Text = "";
                         txtRealCost.Text = "";
+                        idTask = "";
+                        cbxActive.Checked = false;
                         modify = false;
                     }
                     else
@@ -176,12 +213,13 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
             txtRealHours.Text = actualHours;
             txtRealCost.Text = actualCost;
             dateFinal.Value = endDate;
+            _ = (isActive == "1") ? cbxActive.Checked = true : cbxActive.Checked = false;
 
             modify = true;
         }
         private void TblTask_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = tblTask.Rows[e.RowIndex];
 
@@ -192,6 +230,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                 actualHours = row.Cells[5].Value.ToString();
                 actualCost = row.Cells[6].Value.ToString();
                 endDate = DateTime.Parse(row.Cells[7].Value.ToString());
+                _=(row.Cells[8].Value.ToString() == "1") ? isActive = "1" : isActive = "0";
             }
         }
         private void BtnDelete_Click(object sender, EventArgs e)
@@ -208,6 +247,31 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                 MessageBox.Show($"Error al eliminar Tarea:\n{sqlQuery}");
             }
             tblTask.DataSource = new SqlServer().searchRow(typeof(Entities.Task), "dbo.task", $"proyect_id={projectId};");
+        }
+        private void CbxActive_Click(object sender, EventArgs e)
+        {
+            if(idTask != "" && modify)
+            {
+                if(cbxActive.Checked == false) MessageBox.Show($"Tarea marcada como en progreso id:{idTask}");
+                if(cbxActive.Checked == true) MessageBox.Show($"Tarea marcada como finalizada id:{idTask}");
+            }
+            else
+            {
+                cbxActive.Checked = false;
+                MessageBox.Show("Seccione para modificar la tarea");
+            }
+        }
+        private void BtnAddEmployee_Click(object sender, EventArgs e)
+        {
+            if (idTask != "")
+            {
+                frmAddEmployee frmAddEmployee = new frmAddEmployee(idTask, projectId, description);
+                frmAddEmployee.Show();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una tarea");
+            }
         }
         private string validation(string description, string estimatedHours, string estimatedCost, string actualHours, string actualCost)
         {
