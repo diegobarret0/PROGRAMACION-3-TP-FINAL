@@ -120,6 +120,7 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
             btnSave.Text = "Guardar";
             btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSave.UseVisualStyleBackColor = true;
+
             btnSave.Click += BtnSave_Click;
             // 
             // dateObservation

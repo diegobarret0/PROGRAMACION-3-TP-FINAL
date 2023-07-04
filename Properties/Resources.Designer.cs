@@ -10,9 +10,8 @@
 
 namespace PROGRAMACION_3_TP_FINAL.Properties {
     using System;
-    using System.Drawing;
-
-
+    
+    
     /// <summary>
     ///   Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
     /// </summary>
@@ -23,15 +22,8 @@ namespace PROGRAMACION_3_TP_FINAL.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
-        internal static Image search_engine_optimization;
-        internal static Image dibujo;
-        internal static Image guardar_el_archivo;
-        internal static Image borrar;
-        internal static Image agregar_archivo;
-        internal static Image agregar_usuario;
-        internal static Image agregar_contacto;
-        internal static Image proyecto;
+    public class Resources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
@@ -44,7 +36,7 @@ namespace PROGRAMACION_3_TP_FINAL.Properties {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PROGRAMACION_3_TP_FINAL.Properties.Resources", typeof(Resources).Assembly);
@@ -59,7 +51,7 @@ namespace PROGRAMACION_3_TP_FINAL.Properties {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -71,7 +63,7 @@ namespace PROGRAMACION_3_TP_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1737367_comment_description_note_problem_task_icon {
+        public static System.Drawing.Bitmap _1737367_comment_description_note_problem_task_icon {
             get {
                 object obj = ResourceManager.GetObject("1737367_comment_description_note_problem_task_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -81,7 +73,7 @@ namespace PROGRAMACION_3_TP_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _216490_add_user_icon {
+        public static System.Drawing.Bitmap _216490_add_user_icon {
             get {
                 object obj = ResourceManager.GetObject("216490_add_user_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -91,7 +83,7 @@ namespace PROGRAMACION_3_TP_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2530835_compose_create_edit_edit_file_office_icon {
+        public static System.Drawing.Bitmap _2530835_compose_create_edit_edit_file_office_icon {
             get {
                 object obj = ResourceManager.GetObject("2530835_compose_create_edit_edit file_office_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -101,7 +93,7 @@ namespace PROGRAMACION_3_TP_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2620522_employee_folder_job_seeker_unemployee_icon {
+        public static System.Drawing.Bitmap _2620522_employee_folder_job_seeker_unemployee_icon {
             get {
                 object obj = ResourceManager.GetObject("2620522_employee_folder_job_seeker_unemployee_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -111,7 +103,7 @@ namespace PROGRAMACION_3_TP_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _285657_floppy_guardar_save_icon {
+        public static System.Drawing.Bitmap _285657_floppy_guardar_save_icon {
             get {
                 object obj = ResourceManager.GetObject("285657_floppy_guardar_save_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -121,7 +113,7 @@ namespace PROGRAMACION_3_TP_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _34217_close_delete_remove_icon {
+        public static System.Drawing.Bitmap _34217_close_delete_remove_icon {
             get {
                 object obj = ResourceManager.GetObject("34217_close_delete_remove_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -131,7 +123,7 @@ namespace PROGRAMACION_3_TP_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _34752_people_users_icon {
+        public static System.Drawing.Bitmap _34752_people_users_icon {
             get {
                 object obj = ResourceManager.GetObject("34752_people_users_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -141,7 +133,7 @@ namespace PROGRAMACION_3_TP_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _3669292_playlist_add_ic_icon {
+        public static System.Drawing.Bitmap _3669292_playlist_add_ic_icon {
             get {
                 object obj = ResourceManager.GetObject("3669292_playlist_add_ic_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -151,7 +143,7 @@ namespace PROGRAMACION_3_TP_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _3669477_add_box_ic_icon {
+        public static System.Drawing.Bitmap _3669477_add_box_ic_icon {
             get {
                 object obj = ResourceManager.GetObject("3669477_add_box_ic_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -161,7 +153,7 @@ namespace PROGRAMACION_3_TP_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _43598_briefcase_work_icon {
+        public static System.Drawing.Bitmap _43598_briefcase_work_icon {
             get {
                 object obj = ResourceManager.GetObject("43598_briefcase_work_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -171,7 +163,7 @@ namespace PROGRAMACION_3_TP_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _61816_business_buyers_clients_users_icon {
+        public static System.Drawing.Bitmap _61816_business_buyers_clients_users_icon {
             get {
                 object obj = ResourceManager.GetObject("61816_business_buyers_clients_users_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -181,7 +173,7 @@ namespace PROGRAMACION_3_TP_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _8956796_trash_can_bin_delete_rubbish_icon {
+        public static System.Drawing.Bitmap _8956796_trash_can_bin_delete_rubbish_icon {
             get {
                 object obj = ResourceManager.GetObject("8956796_trash_can_bin_delete_rubbish_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -191,9 +183,99 @@ namespace PROGRAMACION_3_TP_FINAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _9042816_page_search_icon {
+        public static System.Drawing.Bitmap _9042816_page_search_icon {
             get {
                 object obj = ResourceManager.GetObject("9042816_page_search_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap agregar_archivo {
+            get {
+                object obj = ResourceManager.GetObject("agregar-archivo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap agregar_contacto {
+            get {
+                object obj = ResourceManager.GetObject("agregar-contacto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap agregar_usuario {
+            get {
+                object obj = ResourceManager.GetObject("agregar-usuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap borrar {
+            get {
+                object obj = ResourceManager.GetObject("borrar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap dibujo {
+            get {
+                object obj = ResourceManager.GetObject("dibujo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap guardar_el_archivo {
+            get {
+                object obj = ResourceManager.GetObject("guardar-el-archivo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Image1 {
+            get {
+                object obj = ResourceManager.GetObject("Image1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap proyecto {
+            get {
+                object obj = ResourceManager.GetObject("proyecto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap search_engine_optimization {
+            get {
+                object obj = ResourceManager.GetObject("search-engine-optimization", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

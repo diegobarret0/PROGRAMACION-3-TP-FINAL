@@ -154,7 +154,6 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
         }
         private void tblEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = tblEmployee.Rows[e.RowIndex];
@@ -166,7 +165,6 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
                 phoneNumber = row.Cells[4].Value.ToString();
                 email = row.Cells[5].Value.ToString();
             }
-
         }
         private void btnModify_Click(object sender, EventArgs e)
         {

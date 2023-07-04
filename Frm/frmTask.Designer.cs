@@ -155,7 +155,6 @@
             btnSave.Text = "Guardar";
             btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSave.UseVisualStyleBackColor = true;
-            btnSave.Click += BtnSave_Click;
             // 
             // btnDelete
             // 
@@ -250,7 +249,7 @@
             btnAddEmployee.Size = new Size(127, 33);
             btnAddEmployee.TabIndex = 24;
             btnAddEmployee.Text = "Añadir Personal";
-            btnAddEmployee.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnAddEmployee.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnAddEmployee.UseVisualStyleBackColor = true;
             btnAddEmployee.Click += BtnAddEmployee_Click;
             // 

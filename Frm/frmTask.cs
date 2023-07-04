@@ -286,5 +286,10 @@ namespace PROGRAMACION_3_TP_FINAL.Frm
 
             return errors;
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
